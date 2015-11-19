@@ -21,6 +21,7 @@
 #include "conio.h"
 using namespace std;
 
+// contantes com o código das teclas
 #define KEY_UP 119
 #define KEY_DOWN 115
 #define KEY_LEFT 97
@@ -56,12 +57,12 @@ void desenhar(int matriz[5][5],int selecao[5][5], int &tam){
             if(j > 0 and j < tam){ // se for a parte do meio da velha, colocar barra para separar
                 cout << " | ";
             }
-            if(selecao[i][j]==3 and matriz[i][j]==0){
+            if(selecao[i][j]==3 and matriz[i][j]==0){ // valor 3 = posição selecionada - insere apenas se não tiver nenhum valor na matriz principal
                     cout << "@";
             }
             switch(matriz[i][j]){
                 case 0:
-                    if(selecao[i][j]!=3){
+                    if(selecao[i][j]!=3){ // se for diferente de 3 na matriz seleção, pode inserir o espaço em branco, se não teria inserido a posição selecionada
                         cout << " "; // valor 0 = branco
                     }
                     break;
@@ -187,7 +188,7 @@ void vet_guia(int vetL[26], int vetC[26], int &tam, int matriz[5][5]){ // função
 
 void entrada(int matriz[5][5], int selecao[5][5], int vetL[26], int vetC[26], int &tam, int &jogador){
     int opcao, opL=0, opC=0, c=0;
-    bool jogou=false;
+    bool jogou=false; // variável que controla o loop de jogada
     system("cls");
     do {
         desenhar(matriz, selecao, tam);
@@ -195,31 +196,31 @@ void entrada(int matriz[5][5], int selecao[5][5], int vetL[26], int vetC[26], in
         centralizar("Jogador ");
         cout << jogador << "\n";
             c=0;
-            switch((c=_getch())) {
-            case KEY_UP:
+            switch((c=_getch())) { // C será o código da tecla pressionada
+            case KEY_UP: // caso for tecla para cima (W) diminui a linha em 1
                 selecao[opL][opC]=0;
                 opL--;
                 break;
-            case KEY_DOWN:
+            case KEY_DOWN: // caso for tecla para baixo (S) aumenta a linha em 1
                 selecao[opL][opC]=0;
                 opL++;
                 break;
-            case KEY_RIGHT:
+            case KEY_RIGHT: // caso for tecla para direita (D) aumenta a coluna em 1
                 selecao[opL][opC]=0;
                 opC++;
                 break;
-            case KEY_LEFT:
+            case KEY_LEFT: // caso for tecla para a esquerda (A) diminui a coluna em 1
                 selecao[opL][opC]=0;
                 opC--;
                 break;
-            case KEY_ENTER:
+            case KEY_ENTER: // caso for tecla ENTER insere a jogada na posição selecionada apenas se já estiver vazia
                 if(matriz[opL][opC]==0){
                     matriz[opL][opC]=jogador;
                     jogou=true;
                 }
                 break;
             }
-            if(opL >= tam){
+            if(opL >= tam){ // impede que a posição passe dos limites da matriz
                 opL=tam-1;
             }
             if(opL < 0){
@@ -231,12 +232,10 @@ void entrada(int matriz[5][5], int selecao[5][5], int vetL[26], int vetC[26], in
             if(opC < 0){
                 opC=0;
             }
-            selecao[opL][opC]=3;
+            selecao[opL][opC]=3; // insere a posição desejada na matriz seleção
             desenhar(matriz, selecao, tam);
-//        centralizar("Entre com o campo desejado: ");
-//        cin >> opcao;
         centralizar("");
-    } while(jogou==false); // impede que seja inserido um número maior do que o permitido ou que seja inserido num espaço já preenchido
+    } while(jogou==false); // repete o loop de posição até que seja jogado numa posição
 }
 
 void jogadorxcomputador(int matriz[5][5], int selecao[5][5], int &tam, int &dificuldade){ // função que controla o jogador x computador

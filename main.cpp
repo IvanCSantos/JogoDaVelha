@@ -11,7 +11,7 @@
 //          \\==============================================//          \\
 
 #include <iostream>
-#include <string.h> // para manipulação das strings, usado na função centralizar
+#include <string.h> // para manipulação das strings, usado na função centralizar.
 #include <locale.h> // para localização das strings, habilitar a acentuação
 #include <windows.h> // para usar comandos do sistema, tal como CLS (limpar a tela)
 #include <stdlib.h> // para usar comandos como srand, rand

@@ -12,10 +12,10 @@
 
 #include <iostream>
 #include <string.h> // para manipulação das strings, usado na função centralizar.
-#include <locale.h> // para localização das strings, habilitar a acentuação
-#include <windows.h> // para usar comandos do sistema, tal como CLS (limpar a tela)
-#include <stdlib.h> // para usar comandos como srand, rand
-#include <time.h> // time auxilia no rand
+#include <locale.h> // para localização das strings, habilitar a acentuação.
+#include <windows.h> // para usar comandos do sistema, tal como CLS (limpar a tela).
+#include <stdlib.h> // para usar comandos como srand, rand.
+#include <time.h> // time auxilia no rand.
 #include "ia.h"
 #include "centralizar.h"
 #include "conio.h"

@@ -28,8 +28,39 @@ using namespace std;
 #define KEY_RIGHT 100
 #define KEY_ENTER 13
 
+enum {
+    PRETO               = 0,
+    AZUL_ESCURO         = FOREGROUND_BLUE,
+    VERDE_ESCURO        = FOREGROUND_GREEN,
+    CYAN_ESCURO         = FOREGROUND_GREEN | FOREGROUND_BLUE,
+    VERMELHO_ESCURO     = FOREGROUND_RED,
+    ROXO                = FOREGROUND_RED | FOREGROUND_BLUE,
+    AMARELO_ESCURO      = FOREGROUND_RED | FOREGROUND_GREEN,
+    CINZA_ESCURO        = FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE,
+    CINZA               = FOREGROUND_INTENSITY,
+    AZUL                = FOREGROUND_INTENSITY | FOREGROUND_BLUE,
+    VERDE               = FOREGROUND_INTENSITY | FOREGROUND_GREEN,
+    CYAN                = FOREGROUND_INTENSITY | FOREGROUND_GREEN | FOREGROUND_BLUE,
+    VERMELHO            = FOREGROUND_INTENSITY | FOREGROUND_RED,
+    ROSA                = FOREGROUND_INTENSITY | FOREGROUND_RED | FOREGROUND_BLUE,
+    AMARELO             = FOREGROUND_INTENSITY | FOREGROUND_RED | FOREGROUND_GREEN,
+    BRANCO              = FOREGROUND_INTENSITY | FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE,
+};
+
+void cor(int cor){
+    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), cor | BACKGROUND_INTENSITY | BACKGROUND_RED | BACKGROUND_GREEN | BACKGROUND_BLUE);
+}
+
 void gotoxy(int x, int y){
      SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE),(COORD){x-1,y-1});
+}
+
+void LimparMatriz(int matriz[5][5]){ // função para limpar a matriz toda vez que um novo jogo começar
+    for(int i=0; i < 5; i++){
+        for(int j=0; j < 5; j++){
+            matriz[i][j]=0;
+        }
+    }
 }
 
 void desenhar(int matriz[5][5],int selecao[5][5], int &tam){
@@ -58,7 +89,9 @@ void desenhar(int matriz[5][5],int selecao[5][5], int &tam){
                 cout << " | ";
             }
             if(selecao[i][j]==3 and matriz[i][j]==0){ // valor 3 = posição selecionada - insere apenas se não tiver nenhum valor na matriz principal
-                    cout << "@";
+                cor(VERDE_ESCURO);
+                cout << "@";
+                cor(PRETO);
             }
             switch(matriz[i][j]){
                 case 0:
@@ -67,12 +100,17 @@ void desenhar(int matriz[5][5],int selecao[5][5], int &tam){
                     }
                     break;
                 case 1:
+                    if(selecao[i][j]==3)
+                        cor(VERMELHO);
                     cout << "X"; // valor 1 = X
                     break;
                 case 2:
+                    if(selecao[i][j]==3)
+                        cor(VERMELHO);
                     cout << "O"; // valor 2 = O
                     break;
             }
+            cor(PRETO);
         }
         if(i < tam-1){
             cout << "\n";
@@ -186,10 +224,11 @@ void vet_guia(int vetL[26], int vetC[26], int &tam, int matriz[5][5]){ // função
     }
 }
 
-void entrada(int matriz[5][5], int selecao[5][5], int vetL[26], int vetC[26], int &tam, int &jogador){
+void entrada(int matriz[5][5], int selecao[5][5], int &tam, int &jogador){
     int opcao, opL=0, opC=0, c=0;
     bool jogou=false; // variável que controla o loop de jogada
     system("cls");
+    selecao[0][0]=3;
     do {
         desenhar(matriz, selecao, tam);
         cout << "\n\n";
@@ -246,7 +285,7 @@ void jogadorxcomputador(int matriz[5][5], int selecao[5][5], int &tam, int &difi
     while(vencer == false){ // enquanto ninguém vencer executa o loop de procedimentos
         jogador=1;
         desenhar(matriz, selecao, tam);
-        entrada(matriz, selecao, vetL, vetC, tam, jogador); // entrada do jogador
+        entrada(matriz, selecao, tam, jogador); // entrada do jogador
         desenhar(matriz, selecao, tam);
         vencer = verificacao(matriz, selecao, tam, jogador, computador); // faz a verificação e retorna true ou false para a variável vencer
         if(vencer==false){
@@ -266,7 +305,7 @@ void jogadorxjogador(int matriz[5][5], int selecao[5][5], int &tam){ // função q
     vet_guia(vetL, vetC, tam, matriz); // chama a função para criar o vetor guia que ajuda a manipular a matriz
     while(vencer == false){ // enquanto ninguém vencer executa o loop de procedimentos
         desenhar(matriz, selecao, tam);
-        entrada(matriz, selecao, vetL, vetC, tam, jogador); // entrada do jogador
+        entrada(matriz, selecao, tam, jogador); // entrada do jogador
         vencer = verificacao(matriz, selecao, tam, jogador); // faz a verificação e retorna true ou false para a variável vencer
         desenhar(matriz, selecao, tam);
         if (vencer==false){ // se ninguém venceu ainda, troca de jogador
@@ -339,14 +378,6 @@ void menu_dificuldade(int &dificuldade){
     centralizar("Opção: ");
     cin >> opcao;
     dificuldade = opcao; // define a dificuldade do jogo com base na escolha do usuário
-}
-
-void LimparMatriz(int matriz[5][5]){ // função para limpar a matriz toda vez que um novo jogo começar
-    for(int i=0; i < 5; i++){
-        for(int j=0; j < 5; j++){
-            matriz[i][j]=0;
-        }
-    }
 }
 
 void menu(int &tam, int &dificuldade, int matriz[5][5], int selecao[5][5])

@@ -28,7 +28,7 @@ using namespace std;
 #define KEY_RIGHT 100
 #define KEY_ENTER 13
 
-enum {
+enum { // enum com todas as constantes de cor simplificadas com um nome mais fácil
     PRETO               = 0,
     AZUL_ESCURO         = FOREGROUND_BLUE,
     VERDE_ESCURO        = FOREGROUND_GREEN,
@@ -47,11 +47,11 @@ enum {
     BRANCO              = FOREGROUND_INTENSITY | FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE,
 };
 
-void cor(int cor){
+void cor(int cor){ // função para mudar cor do texto
     SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), cor | BACKGROUND_INTENSITY | BACKGROUND_RED | BACKGROUND_GREEN | BACKGROUND_BLUE);
 }
 
-void gotoxy(int x, int y){
+void gotoxy(int x, int y){ // usado para mudar a posição de escrita do console
      SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE),(COORD){x-1,y-1});
 }
 
@@ -89,8 +89,8 @@ void desenhar(int matriz[5][5],int selecao[5][5], int &tam){
                 cout << " | ";
             }
             if(selecao[i][j]==3 and matriz[i][j]==0){ // valor 3 = posição selecionada - insere apenas se não tiver nenhum valor na matriz principal
-                cor(VERDE_ESCURO);
-                cout << "@";
+                cor(VERDE_ESCURO); // define a cor do cursor como verde escuro
+                cout << "X";
                 cor(PRETO);
             }
             switch(matriz[i][j]){
@@ -101,16 +101,16 @@ void desenhar(int matriz[5][5],int selecao[5][5], int &tam){
                     break;
                 case 1:
                     if(selecao[i][j]==3)
-                        cor(VERMELHO);
+                        cor(VERMELHO); // se o cursor estiver em cima do X, representa ele vermelho, indicando que não é possível jogar em cima
                     cout << "X"; // valor 1 = X
                     break;
                 case 2:
                     if(selecao[i][j]==3)
-                        cor(VERMELHO);
+                        cor(VERMELHO); // se o cursor estiver em cima da O, representa ela vermelha, indicando que não é possível jogar em cima
                     cout << "O"; // valor 2 = O
                     break;
             }
-            cor(PRETO);
+            cor(PRETO); // volta a cor do texto para preto
         }
         if(i < tam-1){
             cout << "\n";
@@ -228,7 +228,7 @@ void entrada(int matriz[5][5], int selecao[5][5], int &tam, int &jogador){
     int opcao, opL=0, opC=0, c=0;
     bool jogou=false; // variável que controla o loop de jogada
     system("cls");
-    selecao[0][0]=3;
+    selecao[0][0]=3; // sempre que começar uma nova entrada, volta o cursor para a primeira posição
     do {
         desenhar(matriz, selecao, tam);
         cout << "\n\n";
@@ -273,7 +273,6 @@ void entrada(int matriz[5][5], int selecao[5][5], int &tam, int &jogador){
             }
             selecao[opL][opC]=3; // insere a posição desejada na matriz seleção
             desenhar(matriz, selecao, tam);
-        centralizar("");
     } while(jogou==false); // repete o loop de posição até que seja jogado numa posição
 }
 
@@ -376,7 +375,7 @@ void menu_dificuldade(int &dificuldade){
 
 void menu(int &tam, int &dificuldade, int matriz[5][5], int selecao[5][5])
 {
-    LimparMatriz(matriz);
+    LimparMatriz(matriz); // toda vez que voltar ao menu limpa as matrizes
     LimparMatriz(selecao);
     system("cls");
     int opcao; // variavel local para armazenar a opção escolhida
@@ -415,9 +414,9 @@ void menu(int &tam, int &dificuldade, int matriz[5][5], int selecao[5][5])
 
 int main()
 {
-    system("color f0");
+    system("color f0"); // cor do console
     setlocale(LC_ALL, "Portuguese_Brazil"); // para a acentuação funcionar
-    srand (time(NULL));
+    srand(time(NULL)); // para usar random
     int tam = 3, dificuldade = 1, matriz[5][5]={0}, selecao[5][5]={0}; // variáveis int
     menu(tam, dificuldade, matriz, selecao); // chama o menu
 }

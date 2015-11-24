@@ -22,10 +22,10 @@
 using namespace std;
 
 enum { // enum com o código das teclas
-    KEY_UP      = 119,
-    KEY_DOWN    = 115,
-    KEY_LEFT    = 97,
-    KEY_RIGHT   = 100,
+    KEY_UP      = 72,
+    KEY_DOWN    = 80,
+    KEY_LEFT    = 75,
+    KEY_RIGHT   = 77,
     KEY_ENTER   = 13,
 };
 

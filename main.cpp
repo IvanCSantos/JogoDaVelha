@@ -21,12 +21,13 @@
 #include "conio.h"
 using namespace std;
 
-// contantes com o código das teclas
-#define KEY_UP 119
-#define KEY_DOWN 115
-#define KEY_LEFT 97
-#define KEY_RIGHT 100
-#define KEY_ENTER 13
+enum { // enum com o código das teclas
+    KEY_UP      = 119,
+    KEY_DOWN    = 115,
+    KEY_LEFT    = 97,
+    KEY_RIGHT   = 100,
+    KEY_ENTER   = 13,
+};
 
 enum { // enum com todas as constantes de cor simplificadas com um nome mais fácil
     PRETO               = 0,

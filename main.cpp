@@ -2,26 +2,26 @@
 //          ||                                              ||          \\
 //          ||                 JOGO DA VELHA                ||          \\
 //          ||                                              ||          \\
-//          ||  Desenvolvido por AndrÈ Luiz e Ivan Carlos   ||          \\
-//          ||  Disciplina: Algoritmos e ProgramaÁ„o        ||          \\
-//          ||  2∫ perÌodo                                  ||          \\
+//          ||  Desenvolvido por Andr√© Luiz e Ivan Carlos   ||          \\
+//          ||  Disciplina: Algoritmos e Programa√ß√£o        ||          \\
+//          ||  2¬∫ per√≠odo                                  ||          \\
 //          ||  Professora: Elisangela Maschio de Miranda   ||          \\
-//          ||  UNIVALI - Universidade do Vale do ItajaÌ    ||          \\
+//          ||  UNIVALI - Universidade do Vale do Itaja√≠    ||          \\
 //          ||                                              ||          \\
 //          \\==============================================//          \\
 
 #include <iostream>
-#include <string.h> // para manipulaÁ„o das strings, usado na funÁ„o centralizar.
-#include <locale.h> // para localizaÁ„o das strings, habilitar a acentuaÁ„o.
+#include <string.h> // para manipula√ß√£o das strings, usado na fun√ß√£o centralizar.
+#include <locale.h> // para localiza√ß√£o das strings, habilitar a acentua√ß√£o.
 #include <windows.h> // para usar comandos do sistema, tal como CLS (limpar a tela).
 #include <stdlib.h> // para usar comandos como srand, rand.
-#include <time.h> // time auxilia no rand.
+#include <time.h> // time auxilia no rand
 #include "ia.h"
 #include "centralizar.h"
 #include "conio.h"
 using namespace std;
 
-enum { // enum com o cÛdigo das teclas
+enum { // enum com o c√≥digo das teclas
     KEY_UP      = 72,
     KEY_DOWN    = 80,
     KEY_LEFT    = 75,
@@ -29,19 +29,19 @@ enum { // enum com o cÛdigo das teclas
     KEY_ENTER   = 13,
 };
 
-enum { // enum com todas as constantes de cor simplificadas com um nome mais f·cil
+enum { // enum com todas as constantes de cor simplificadas com um nome mais f√°cil
     PRETO, AZUL_ESCURO, VERDE_ESCURO, CYAN_ESCURO, VERMELHO_ESCURO, ROXO, AMARELO_ESCURO, CINZA, CINZA_ESCURO, AZUL, VERDE, AZUL_CLARO, VERMELHO, ROSA, AMARELO, BRANCO,
 };
 
-void cor(int cor){ // funÁ„o para mudar cor do texto
+void cor(int cor){ // fun√ß√£o para mudar cor do texto
     SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), cor | BACKGROUND_INTENSITY | BACKGROUND_RED | BACKGROUND_GREEN | BACKGROUND_BLUE);
 }
 
-void gotoxy(int x, int y){ // usado para mudar a posiÁ„o de escrita do console
+void gotoxy(int x, int y){ // usado para mudar a posi√ß√£o de escrita do console
      SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE),(COORD){x-1,y-1});
 }
 
-void LimparMatriz(int matriz[5][5]){ // funÁ„o para limpar a matriz toda vez que um novo jogo comeÁar
+void LimparMatriz(int matriz[5][5]){ // fun√ß√£o para limpar a matriz toda vez que um novo jogo come√ßar
     for(int i=0; i < 5; i++){
         for(int j=0; j < 5; j++){
             matriz[i][j]=0;
@@ -55,7 +55,7 @@ void desenhar(int matriz[5][5],int selecao[5][5], int &tam){
     for(int i = 0; i < tam; i++)
     {
         cout << "\n";
-        switch(tam){ // centraliza a velha no console, mas com -x caracteres (depende do tam) para continuar centralizada mesmo apÛs preenchimento dos valores da matriz
+        switch(tam){ // centraliza a velha no console, mas com -x caracteres (depende do tam) para continuar centralizada mesmo ap√≥s preenchimento dos valores da matriz
             case 3:
                 centralizar("", 5);
                 break;
@@ -68,31 +68,31 @@ void desenhar(int matriz[5][5],int selecao[5][5], int &tam){
             }
         for(int j = 0; j < tam; j++)
         {
-            if(j == 0){ // se for a primeira coluna, deixa um espaÁo em branco para alinhamento
+            if(j == 0){ // se for a primeira coluna, deixa um espa√ßo em branco para alinhamento
                cout << "";
             }
             if(j > 0 and j < tam){ // se for a parte do meio da velha, colocar barra para separar
                 cout << " | ";
             }
-            if(selecao[i][j]==3 and matriz[i][j]==0){ // valor 3 = posiÁ„o selecionada - insere apenas se n„o tiver nenhum valor na matriz principal
+            if(selecao[i][j]==3 and matriz[i][j]==0){ // valor 3 = posi√ß√£o selecionada - insere apenas se n√£o tiver nenhum valor na matriz principal
                 cor(VERDE_ESCURO); // define a cor do cursor como verde escuro
                 cout << "X";
                 cor(PRETO);
             }
             switch(matriz[i][j]){
                 case 0:
-                    if(selecao[i][j]!=3){ // se for diferente de 3 na matriz seleÁ„o, pode inserir o espaÁo em branco, se n„o teria inserido a posiÁ„o selecionada
+                    if(selecao[i][j]!=3){ // se for diferente de 3 na matriz sele√ß√£o, pode inserir o espa√ßo em branco, se n√£o teria inserido a posi√ß√£o selecionada
                         cout << " "; // valor 0 = branco
                     }
                     break;
                 case 1:
                     if(selecao[i][j]==3)
-                        cor(VERMELHO); // se o cursor estiver em cima do X, representa ele vermelho, indicando que n„o È possÌvel jogar em cima
+                        cor(VERMELHO); // se o cursor estiver em cima do X, representa ele vermelho, indicando que n√£o √© poss√≠vel jogar em cima
                     cout << "X"; // valor 1 = X
                     break;
                 case 2:
                     if(selecao[i][j]==3)
-                        cor(VERMELHO); // se o cursor estiver em cima da O, representa ela vermelha, indicando que n„o È possÌvel jogar em cima
+                        cor(VERMELHO); // se o cursor estiver em cima da O, representa ela vermelha, indicando que n√£o √© poss√≠vel jogar em cima
                     cout << "O"; // valor 2 = O
                     break;
             }
@@ -102,13 +102,13 @@ void desenhar(int matriz[5][5],int selecao[5][5], int &tam){
             cout << "\n";
             switch(tam){
                 case 3:
-                    centralizar("-----------"); // separaÁ„o de linha da velha
+                    centralizar("-----------"); // separa√ß√£o de linha da velha
                     break;
                 case 4:
-                    centralizar("---------------"); // separaÁ„o de linha da velha
+                    centralizar("---------------"); // separa√ß√£o de linha da velha
                     break;
                 case 5:
-                    centralizar("-------------------"); // separaÁ„o de linha da velha
+                    centralizar("-------------------"); // separa√ß√£o de linha da velha
                     break;
             }
         }
@@ -127,8 +127,8 @@ bool verificacao(int matriz[5][5], int selecao[5][5], int &tam, int &jogador, bo
         auxDP2=0;
         auxDS1=0;
         auxDS2=0;
-        // incrementaÁ„o somas
-        // verificaÁ„o horizontal
+        // incrementa√ß√£o somas
+        // verifica√ß√£o horizontal
         for(int j = 0; j < tam; j++){
             if (matriz[i][j]==1){
                 auxH1++;
@@ -137,45 +137,45 @@ bool verificacao(int matriz[5][5], int selecao[5][5], int &tam, int &jogador, bo
                 auxH2++;
                 geral++;
             }
-        // verificaÁ„o vertical
+        // verifica√ß√£o vertical
             if (matriz[j][i]==1){
                 auxV1++;
             } else if (matriz[j][i]==2){
                 auxV2++;
             }
-        // verificaÁ„o diagonal principal
+        // verifica√ß√£o diagonal principal
             if (matriz[j][j]==1){
                 auxDP1++;
             } else if (matriz[j][j]==2){
                 auxDP2++;
             }
-        // verificaÁ„o diagonal secund·ria
+        // verifica√ß√£o diagonal secund√°ria
             if (matriz[j][(tam-1)-j]==1){
                 auxDS1++;
             } else if (matriz[j][(tam-1)-j]==2){
                 auxDS2++;
             }
-        // verificaÁ„o final
+        // verifica√ß√£o final
             if(auxH1==tam or auxH2==tam or auxV1==tam or auxV2==tam or auxDP1==tam or auxDP2==tam or auxDS1==tam or auxDS2==tam){
                 if(ia==false){
                     desenhar(matriz, selecao, tam);
-                    cout << "\n\n"; centralizar("ParabÈns ao jogador "); cout << jogador << "!" << "\n\n";
+                    cout << "\n\n"; centralizar("Parab√©ns ao jogador "); cout << jogador << "!" << "\n\n";
                     system("pause");
                     return true;
                 } else if(ia==true) {
                     if(jogador==1){
                         desenhar(matriz, selecao, tam);
-                        cout << "\n\n"; centralizar("ParabÈns ao jogador 1!\n\n");
+                        cout << "\n\n"; centralizar("Parab√©ns ao jogador 1!\n\n");
                     }
                     if(jogador==2){
                         desenhar(matriz, selecao, tam);
-                        cout << "\n\n"; centralizar("ParabÈns ao computador\n\n");
+                        cout << "\n\n"; centralizar("Parab√©ns ao computador\n\n");
                     }
                     system("pause");
                     return true;
                 }
             }
-            if(geral==tam*tam){ // verificaÁ„o velha
+            if(geral==tam*tam){ // verifica√ß√£o velha
                 desenhar(matriz, selecao, tam);
                 cout << "\n\n"; centralizar("Deu velha!"); cout << "\n\n";
                 system("pause");
@@ -185,7 +185,7 @@ bool verificacao(int matriz[5][5], int selecao[5][5], int &tam, int &jogador, bo
     }
 }
 
-void vet_guia(int vetL[26], int vetC[26], int &tam, int matriz[5][5]){ // funÁ„o para o vetor que guia no processo da entrada na matriz
+void vet_guia(int vetL[26], int vetC[26], int &tam, int matriz[5][5]){ // fun√ß√£o para o vetor que guia no processo da entrada na matriz
     int valor=0, aux=1;
     for(int i = 1; i <= tam*tam; i++){ // vetor guia das linhas, cria um vetor conforme o tamanho, ex: 0, 0, 0, 1, 1, 1, 2, 2, 2.
         if (aux > tam){
@@ -212,17 +212,17 @@ void vet_guia(int vetL[26], int vetC[26], int &tam, int matriz[5][5]){ // funÁ„o
 
 void entrada(int matriz[5][5], int selecao[5][5], int &tam, int &jogador){
     int opcao, opL=0, opC=0, c=0;
-    bool jogou=false; // vari·vel que controla o loop de jogada
+    bool jogou=false; // vari√°vel que controla o loop de jogada
     system("cls");
     LimparMatriz(selecao);
-    selecao[0][0]=3; // sempre que comeÁar uma nova entrada, volta o cursor para a primeira posiÁ„o
+    selecao[0][0]=3; // sempre que come√ßar uma nova entrada, volta o cursor para a primeira posi√ß√£o
     do {
         desenhar(matriz, selecao, tam);
         cout << "\n\n";
         centralizar("Jogador ");
         cout << jogador << "\n";
             c=0;
-            switch((c=_getch())) { // C ser· o cÛdigo da tecla pressionada
+            switch((c=_getch())) { // C ser√° o c√≥digo da tecla pressionada
             case KEY_UP: // caso for tecla para cima (W) diminui a linha em 1
                 selecao[opL][opC]=0;
                 opL--;
@@ -239,14 +239,14 @@ void entrada(int matriz[5][5], int selecao[5][5], int &tam, int &jogador){
                 selecao[opL][opC]=0;
                 opC--;
                 break;
-            case KEY_ENTER: // caso for tecla ENTER insere a jogada na posiÁ„o selecionada apenas se j· estiver vazia
+            case KEY_ENTER: // caso for tecla ENTER insere a jogada na posi√ß√£o selecionada apenas se j√° estiver vazia
                 if(matriz[opL][opC]==0){
                     matriz[opL][opC]=jogador;
                     jogou=true;
                 }
                 break;
             }
-            if(opL >= tam){ // impede que a posiÁ„o passe dos limites da matriz
+            if(opL >= tam){ // impede que a posi√ß√£o passe dos limites da matriz
                 opL=tam-1;
             }
             if(opL < 0){
@@ -258,43 +258,43 @@ void entrada(int matriz[5][5], int selecao[5][5], int &tam, int &jogador){
             if(opC < 0){
                 opC=0;
             }
-            selecao[opL][opC]=3; // insere a posiÁ„o desejada na matriz seleÁ„o
+            selecao[opL][opC]=3; // insere a posi√ß√£o desejada na matriz sele√ß√£o
             desenhar(matriz, selecao, tam);
-    } while(jogou==false); // repete o loop de posiÁ„o atÈ que seja jogado numa posiÁ„o
+    } while(jogou==false); // repete o loop de posi√ß√£o at√© que seja jogado numa posi√ß√£o
 }
 
-void jogadorxcomputador(int matriz[5][5], int selecao[5][5], int &tam, int &dificuldade){ // funÁ„o que controla o jogador x computador
+void jogadorxcomputador(int matriz[5][5], int selecao[5][5], int &tam, int &dificuldade){ // fun√ß√£o que controla o jogador x computador
     bool vencer = false, computador = true;
     int jogador = 1;
     int vetL[26], vetC[26];
-    vet_guia(vetL, vetC, tam, matriz); // chama a funÁ„o para criar o vetor guia que ajuda a manipular a matriz
-    while(vencer == false){ // enquanto ninguÈm vencer executa o loop de procedimentos
+    vet_guia(vetL, vetC, tam, matriz); // chama a fun√ß√£o para criar o vetor guia que ajuda a manipular a matriz
+    while(vencer == false){ // enquanto ningu√©m vencer executa o loop de procedimentos
         jogador=1;
         desenhar(matriz, selecao, tam);
         entrada(matriz, selecao, tam, jogador); // entrada do jogador
         desenhar(matriz, selecao, tam);
-        vencer = verificacao(matriz, selecao, tam, jogador, computador); // faz a verificaÁ„o e retorna true ou false para a vari·vel vencer
+        vencer = verificacao(matriz, selecao, tam, jogador, computador); // faz a verifica√ß√£o e retorna true ou false para a vari√°vel vencer
         if(vencer==false){
             jogador=2;
-            ia(matriz, vetL, vetC, tam, dificuldade); // funÁ„o que faz a jogada do computador
+            ia(matriz, vetL, vetC, tam, dificuldade); // fun√ß√£o que faz a jogada do computador
             Sleep(1000);
-            vencer = verificacao(matriz, selecao, tam, jogador, computador); // faz a verificaÁ„o e retorna true ou false para a vari·vel vencer
+            vencer = verificacao(matriz, selecao, tam, jogador, computador); // faz a verifica√ß√£o e retorna true ou false para a vari√°vel vencer
             desenhar(matriz, selecao, tam);
         }
     }
 }
 
-void jogadorxjogador(int matriz[5][5], int selecao[5][5], int &tam){ // funÁ„o que controla o jogador x jogador
+void jogadorxjogador(int matriz[5][5], int selecao[5][5], int &tam){ // fun√ß√£o que controla o jogador x jogador
     bool vencer = false;
     int jogador = 1;
     int vetL[26], vetC[26];
-    vet_guia(vetL, vetC, tam, matriz); // chama a funÁ„o para criar o vetor guia que ajuda a manipular a matriz
-    while(vencer == false){ // enquanto ninguÈm vencer executa o loop de procedimentos
+    vet_guia(vetL, vetC, tam, matriz); // chama a fun√ß√£o para criar o vetor guia que ajuda a manipular a matriz
+    while(vencer == false){ // enquanto ningu√©m vencer executa o loop de procedimentos
         desenhar(matriz, selecao, tam);
         entrada(matriz, selecao, tam, jogador); // entrada do jogador
-        vencer = verificacao(matriz, selecao, tam, jogador); // faz a verificaÁ„o e retorna true ou false para a vari·vel vencer
+        vencer = verificacao(matriz, selecao, tam, jogador); // faz a verifica√ß√£o e retorna true ou false para a vari√°vel vencer
         desenhar(matriz, selecao, tam);
-        if (vencer==false){ // se ninguÈm venceu ainda, troca de jogador
+        if (vencer==false){ // se ningu√©m venceu ainda, troca de jogador
             if(jogador==1){
                 jogador = 2;
             } else {
@@ -322,17 +322,17 @@ void menu_comojogar(int &tam, int &dificuldade){ // texto de como jogar
 
 void menu_tam(int &tam){
     system("cls");
-    int opcao; // variavel local para armazenar a opÁ„o escolhida
+    int opcao; // variavel local para armazenar a op√ß√£o escolhida
     cout << "\n";
     cor(VERDE_ESCURO);
-    centralizar("Digite o n˙mero do tamanho desejado:"); cout << "\n\n";
+    centralizar("Digite o n√∫mero do tamanho desejado:"); cout << "\n\n";
     cor(PRETO);
     centralizar("1. 3x3"); cout << "\n";
     centralizar("2. 4x4"); cout << "\n";
     centralizar("3. 5x5"); cout << "\n\n";
-    centralizar("OpÁ„o: ");
+    centralizar("Op√ß√£o: ");
     cin >> opcao;
-    switch(opcao) // define o tamanho da matriz com base na escolha do usu·rio
+    switch(opcao) // define o tamanho da matriz com base na escolha do usu√°rio
     {
         case 1:
             tam = 3;
@@ -348,16 +348,16 @@ void menu_tam(int &tam){
 
 void menu_dificuldade(int &dificuldade){
     system("cls");
-    int opcao; // variavel local para armazenar a opÁ„o escolhida
+    int opcao; // variavel local para armazenar a op√ß√£o escolhida
     cout << "\n";
     cor(VERDE_ESCURO);
-    centralizar("Digite o n˙mero da dificuldade desejada"); cout << "\n\n";
+    centralizar("Digite o n√∫mero da dificuldade desejada"); cout << "\n\n";
     cor(PRETO);
-    centralizar("1. F·cil"); cout << "\n";
-    centralizar("2. DifÌcil"); cout << "\n\n";
-    centralizar("OpÁ„o: ");
+    centralizar("1. F√°cil"); cout << "\n";
+    centralizar("2. Dif√≠cil"); cout << "\n\n";
+    centralizar("Op√ß√£o: ");
     cin >> opcao;
-    dificuldade = opcao; // define a dificuldade do jogo com base na escolha do usu·rio
+    dificuldade = opcao; // define a dificuldade do jogo com base na escolha do usu√°rio
 }
 
 void menu(int &tam, int &dificuldade, int matriz[5][5], int selecao[5][5])
@@ -365,19 +365,19 @@ void menu(int &tam, int &dificuldade, int matriz[5][5], int selecao[5][5])
     LimparMatriz(matriz); // toda vez que voltar ao menu limpa as matrizes
     LimparMatriz(selecao);
     system("cls");
-    int opcao; // variavel local para armazenar a opÁ„o escolhida
+    int opcao; // variavel local para armazenar a op√ß√£o escolhida
     cout << "\n";
     cor(VERDE_ESCURO);
     centralizar("BEM-VINDO AO JOGO DA VELHA!"); cout << "\n\n";
     cor(PRETO);
-    centralizar("Digite o n˙mero da opÁ„o desejada:"); cout << "\n\n";
+    centralizar("Digite o n√∫mero da op√ß√£o desejada:"); cout << "\n\n";
     centralizar("1. Jogador vs. Computador"); cout << "\n";
     centralizar("2. Jogador vs. Jogador"); cout << "\n";
     centralizar("3. Como jogar"); cout << "\n";
     centralizar("4. Sair"); cout << "\n\n";
-    centralizar("OpÁ„o: ");
+    centralizar("Op√ß√£o: ");
     cin >> opcao;
-    switch(opcao) // redireciona para outras funÁıes com base na escolha do usu·rio
+    switch(opcao) // redireciona para outras fun√ß√µes com base na escolha do usu√°rio
     {
         case 1:
             menu_tam(tam);
@@ -402,8 +402,8 @@ void menu(int &tam, int &dificuldade, int matriz[5][5], int selecao[5][5])
 int main()
 {
     system("color f0"); // cor do console
-    setlocale(LC_ALL, "Portuguese_Brazil"); // para a acentuaÁ„o funcionar
+    setlocale(LC_ALL, "Portuguese_Brazil"); // para a acentua√ß√£o funcionar
     srand(time(NULL)); // para usar random
-    int tam = 3, dificuldade = 1, matriz[5][5]={0}, selecao[5][5]={0}; // vari·veis int
+    int tam = 3, dificuldade = 1, matriz[5][5]={0}, selecao[5][5]={0}; // vari√°veis int
     menu(tam, dificuldade, matriz, selecao); // chama o menu
 }

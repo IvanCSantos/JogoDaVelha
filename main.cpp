@@ -326,21 +326,11 @@ int sair(){
 void menu_comojogar(int &tam, int &dificuldade){ // texto de como jogar
     system("cls");
     cout << "\n";
-    centralizar("Para jogar basta inserir o número correspondente ao campo que você deseja, exemplo:"); cout << "\n\n";
-    centralizar(" 1 | 2 | 3 "); cout << "\n";
-    centralizar("-----------"); cout << "\n";
-    centralizar(" 4 | 5 | 6 "); cout << "\n";
-    centralizar("-----------"); cout << "\n";
-    centralizar(" 7 | 8 | 9 "); cout << "\n\n";
-    centralizar("----------------------"); cout << "\n\n";
-    centralizar("  1 | 2  | 3  | 4  "); cout << "\n";
-    centralizar("-------------------"); cout << "\n";
-    centralizar("  5 | 6  | 7  | 8  "); cout << "\n";
-    centralizar("-------------------"); cout << "\n";
-    centralizar("  9 | 10 | 11 | 12 "); cout << "\n";
-    centralizar("-------------------"); cout << "\n";
-    centralizar(" 13 | 14 | 15 | 16 "); cout << "\n\n";
-    centralizar("----------------------"); cout << "\n\n";
+    cor(VERDE_ESCURO);
+    centralizar("Como jogar:"); cout << "\n\n";
+    cor(PRETO);
+    centralizar("Controle do cursor: W, A, S, D"); cout << "\n\n";
+    centralizar("Inserir jogada: ENTER"); cout << "\n\n";
     system("pause");
 }
 
@@ -348,7 +338,9 @@ void menu_tam(int &tam){
     system("cls");
     int opcao; // variavel local para armazenar a opção escolhida
     cout << "\n";
+    cor(VERDE_ESCURO);
     centralizar("Digite o número do tamanho desejado:"); cout << "\n\n";
+    cor(PRETO);
     centralizar("1. 3x3"); cout << "\n";
     centralizar("2. 4x4"); cout << "\n";
     centralizar("3. 5x5"); cout << "\n\n";
@@ -372,7 +364,9 @@ void menu_dificuldade(int &dificuldade){
     system("cls");
     int opcao; // variavel local para armazenar a opção escolhida
     cout << "\n";
+    cor(VERDE_ESCURO);
     centralizar("Digite o número da dificuldade desejada"); cout << "\n\n";
+    cor(PRETO);
     centralizar("1. Fácil"); cout << "\n";
     centralizar("2. Difícil"); cout << "\n\n";
     centralizar("Opção: ");
@@ -387,7 +381,9 @@ void menu(int &tam, int &dificuldade, int matriz[5][5], int selecao[5][5])
     system("cls");
     int opcao; // variavel local para armazenar a opção escolhida
     cout << "\n";
+    cor(VERDE_ESCURO);
     centralizar("BEM-VINDO AO JOGO DA VELHA!"); cout << "\n\n";
+    cor(PRETO);
     centralizar("Digite o número da opção desejada:"); cout << "\n\n";
     centralizar("1. Jogador vs. Computador"); cout << "\n";
     centralizar("2. Jogador vs. Jogador"); cout << "\n";

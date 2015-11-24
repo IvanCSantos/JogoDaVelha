@@ -41,15 +41,15 @@ void gotoxy(int x, int y){ // usado para mudar a posição de escrita do console
      SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE),(COORD){x-1,y-1});
 }
 
-void LimparMatriz(int matriz[5][5]){ // função para limpar a matriz toda vez que um novo jogo começar
-    for(int i=0; i < 5; i++){
-        for(int j=0; j < 5; j++){
+void LimparMatriz(int **matriz, int &tam){ // função para limpar a matriz toda vez que um novo jogo começar
+    for(int i=0; i < tam; i++){
+        for(int j=0; j < tam; j++){
             matriz[i][j]=0;
         }
     }
 }
 
-void desenhar(int matriz[5][5],int selecao[5][5], int &tam){
+void desenhar(int **matriz, int **selecao, int &tam){
     gotoxy(1, 1); // limpa a tela toda vez que desenhar
     cout << "\n\n";
     for(int i = 0; i < tam; i++)
@@ -116,7 +116,7 @@ void desenhar(int matriz[5][5],int selecao[5][5], int &tam){
     cout << "\n\n";
 }
 
-bool verificacao(int matriz[5][5], int selecao[5][5], int &tam, int &jogador, bool ia=false){
+bool verificacao(int **matriz, int **selecao, int &tam, int &jogador, bool ia=false){
     int auxH1=0, auxH2=0, auxV1=0, auxV2=0, auxDP1=0, auxDP2=0, auxDS1=0, auxDS2=0, geral=0;
     for(int i = 0; i < tam; i++){
         auxH1=0;
@@ -185,7 +185,7 @@ bool verificacao(int matriz[5][5], int selecao[5][5], int &tam, int &jogador, bo
     }
 }
 
-void vet_guia(int vetL[26], int vetC[26], int &tam, int matriz[5][5]){ // função para o vetor que guia no processo da entrada na matriz
+void vet_guia(int vetL[26], int vetC[26], int &tam, int **matriz){ // função para o vetor que guia no processo da entrada na matriz
     int valor=0, aux=1;
     for(int i = 1; i <= tam*tam; i++){ // vetor guia das linhas, cria um vetor conforme o tamanho, ex: 0, 0, 0, 1, 1, 1, 2, 2, 2.
         if (aux > tam){
@@ -210,11 +210,11 @@ void vet_guia(int vetL[26], int vetC[26], int &tam, int matriz[5][5]){ // funç�
     }
 }
 
-void entrada(int matriz[5][5], int selecao[5][5], int &tam, int &jogador){
+void entrada(int **matriz, int **selecao, int &tam, int &jogador){
     int opcao, opL=0, opC=0, c=0;
     bool jogou=false; // variável que controla o loop de jogada
     system("cls");
-    LimparMatriz(selecao);
+    LimparMatriz(selecao, tam);
     selecao[0][0]=3; // sempre que começar uma nova entrada, volta o cursor para a primeira posição
     do {
         desenhar(matriz, selecao, tam);
@@ -263,7 +263,7 @@ void entrada(int matriz[5][5], int selecao[5][5], int &tam, int &jogador){
     } while(jogou==false); // repete o loop de posição até que seja jogado numa posição
 }
 
-void jogadorxcomputador(int matriz[5][5], int selecao[5][5], int &tam, int &dificuldade){ // função que controla o jogador x computador
+void jogadorxcomputador(int **matriz, int **selecao, int &tam, int &dificuldade){ // função que controla o jogador x computador
     bool vencer = false, computador = true;
     int jogador = 1;
     int vetL[26], vetC[26];
@@ -284,7 +284,7 @@ void jogadorxcomputador(int matriz[5][5], int selecao[5][5], int &tam, int &difi
     }
 }
 
-void jogadorxjogador(int matriz[5][5], int selecao[5][5], int &tam){ // função que controla o jogador x jogador
+void jogadorxjogador(int **matriz, int **selecao, int &tam){ // função que controla o jogador x jogador
     bool vencer = false;
     int jogador = 1;
     int vetL[26], vetC[26];
@@ -302,6 +302,24 @@ void jogadorxjogador(int matriz[5][5], int selecao[5][5], int &tam){ // função
             }
         }
     }
+}
+
+int** DeletarMatriz(int **matriz){
+    delete matriz[0];
+    delete matriz;
+}
+
+int** CriarMatriz(int &tam){
+    int **matriz = new int*[tam];
+    matriz[0] = new int [tam*tam];
+
+    for (int i=1; i<tam; i++)
+        matriz[i] = matriz[i-1]+tam;
+
+    for (int i=0; i<tam; i++)
+        for (int j=0; j<tam; j++)
+            matriz[i][j] = i+j;
+    return matriz;
 }
 
 int sair(){
@@ -360,12 +378,10 @@ void menu_dificuldade(int &dificuldade){
     dificuldade = opcao; // define a dificuldade do jogo com base na escolha do usuário
 }
 
-void menu(int &tam, int &dificuldade, int matriz[5][5], int selecao[5][5])
-{
-    LimparMatriz(matriz); // toda vez que voltar ao menu limpa as matrizes
-    LimparMatriz(selecao);
+void menu(int &tam, int &dificuldade, bool &CriouMatriz){
     system("cls");
     int opcao; // variavel local para armazenar a opção escolhida
+    bool saiu=false;
     cout << "\n";
     cor(VERDE_ESCURO);
     centralizar("BEM-VINDO AO JOGO DA VELHA!"); cout << "\n\n";
@@ -377,24 +393,34 @@ void menu(int &tam, int &dificuldade, int matriz[5][5], int selecao[5][5])
     centralizar("4. Sair"); cout << "\n\n";
     centralizar("Opção: ");
     cin >> opcao;
+    if(sair==false){
+        menu_tam(tam);
+    }
+    int** matriz = CriarMatriz(tam);
+    int** selecao = CriarMatriz(tam);
+    LimparMatriz(matriz, tam); // toda vez que voltar ao menu limpa as matrizes
+    LimparMatriz(selecao, tam);
     switch(opcao) // redireciona para outras funções com base na escolha do usuário
     {
         case 1:
-            menu_tam(tam);
             menu_dificuldade(dificuldade);
             jogadorxcomputador(matriz, selecao, tam, dificuldade);
-            menu(tam, dificuldade, matriz, selecao);
+            DeletarMatriz(matriz);
+            DeletarMatriz(selecao);
+            menu(tam, dificuldade, CriouMatriz);
             break;
         case 2:
-            menu_tam(tam);
             jogadorxjogador(matriz, selecao, tam);
-            menu(tam, dificuldade, matriz, selecao);
+            DeletarMatriz(matriz);
+            DeletarMatriz(selecao);
+            menu(tam, dificuldade, CriouMatriz);
             break;
         case 3:
             menu_comojogar(tam, dificuldade);
-            menu(tam, dificuldade, matriz, selecao);
+            menu(tam, dificuldade, CriouMatriz);
             break;
         case 4:
+            saiu=true;
             sair();
     }
 }
@@ -404,6 +430,7 @@ int main()
     system("color f0"); // cor do console
     setlocale(LC_ALL, "Portuguese_Brazil"); // para a acentuação funcionar
     srand(time(NULL)); // para usar random
-    int tam = 3, dificuldade = 1, matriz[5][5]={0}, selecao[5][5]={0}; // variáveis int
-    menu(tam, dificuldade, matriz, selecao); // chama o menu
+    int tam = 3, dificuldade = 1; // variáveis int
+    bool CriouMatriz=false;
+    menu(tam, dificuldade, CriouMatriz); // chama o menu
 }

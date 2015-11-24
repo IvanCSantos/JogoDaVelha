@@ -2,7 +2,7 @@
 #define IA_H_INCLUDED
 #include "centralizar.h"
 
-int ia(int matriz[5][5], int vetL[26], int vetC[26], int &tam, int &dificuldade){
+int ia(int **matriz, int vetL[26], int vetC[26], int &tam, int &dificuldade){
     int opcao;
     bool jogada=false;
     cout << "\n\n"; centralizar("Vez do computador", 0);

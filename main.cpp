@@ -229,6 +229,7 @@ void entrada(int matriz[5][5], int selecao[5][5], int &tam, int &jogador){
     int opcao, opL=0, opC=0, c=0;
     bool jogou=false; // variável que controla o loop de jogada
     system("cls");
+    LimparMatriz(selecao);
     selecao[0][0]=3; // sempre que começar uma nova entrada, volta o cursor para a primeira posição
     do {
         desenhar(matriz, selecao, tam);

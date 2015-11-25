@@ -1,0 +1,77 @@
+# depslib dependency file v1.0
+1448447392 source:c:\users\andréluiz\desktop\jogodavelha-master\main.cpp
+	<iostream>
+	<locale.h>
+	<windows.h>
+	<stdlib.h>
+	<time.h>
+	"dimensaojanela.h"
+	"menu.h"
+
+1448447392 c:\users\andréluiz\desktop\jogodavelha-master\dimensaojanela.h
+	<windows.h>
+
+1448447392 c:\users\andréluiz\desktop\jogodavelha-master\menu.h
+	"jogadorxcomputador.h"
+	"jogadorxjogador.h"
+	"centralizar.h"
+	"cor.h"
+	"cores.h"
+	"limparmatriz.h"
+	"deletarmatriz.h"
+	"criarmatriz.h"
+
+1448447392 c:\users\andréluiz\desktop\jogodavelha-master\jogadorxcomputador.h
+	"vet_guia.h"
+	"verificacao.h"
+	"desenhar.h"
+	"ia.h"
+	"entrada.h"
+
+1448447392 c:\users\andréluiz\desktop\jogodavelha-master\vet_guia.h
+
+1448447392 c:\users\andréluiz\desktop\jogodavelha-master\verificacao.h
+	"desenhar.h"
+	"centralizar.h"
+
+1448447392 c:\users\andréluiz\desktop\jogodavelha-master\desenhar.h
+	"gotoxy.h"
+	"cores.h"
+	"cor.h"
+	"centralizar.h"
+
+1448447392 c:\users\andréluiz\desktop\jogodavelha-master\gotoxy.h
+	<windows.h>
+
+1448447392 c:\users\andréluiz\desktop\jogodavelha-master\cores.h
+
+1448447392 c:\users\andréluiz\desktop\jogodavelha-master\cor.h
+	<windows.h>
+
+1448447392 c:\users\andréluiz\desktop\jogodavelha-master\centralizar.h
+	<string.h>
+
+1448447392 c:\users\andréluiz\desktop\jogodavelha-master\ia.h
+	"centralizar.h"
+
+1448447392 c:\users\andréluiz\desktop\jogodavelha-master\entrada.h
+	<conio.h>
+	"teclas.h"
+	"centralizar.h"
+	"desenhar.h"
+	"limparmatriz.h"
+
+1448447392 c:\users\andréluiz\desktop\jogodavelha-master\teclas.h
+
+1448447392 c:\users\andréluiz\desktop\jogodavelha-master\limparmatriz.h
+
+1448447392 c:\users\andréluiz\desktop\jogodavelha-master\jogadorxjogador.h
+	"vet_guia.h"
+	"desenhar.h"
+	"entrada.h"
+	"verificacao.h"
+
+1448447392 c:\users\andréluiz\desktop\jogodavelha-master\deletarmatriz.h
+
+1448447392 c:\users\andréluiz\desktop\jogodavelha-master\criarmatriz.h
+

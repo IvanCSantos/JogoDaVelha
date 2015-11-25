@@ -7,7 +7,11 @@
 using namespace std;
 
 bool verificacao(int **matriz, int **selecao, int &tam, int &jogador, bool ia=false){
-    int auxH1=0, auxH2=0, auxV1=0, auxV2=0, auxDP1=0, auxDP2=0, auxDS1=0, auxDS2=0, geral=0;
+    int auxH1=0, auxH2=0, auxV1=0, auxV2=0, auxDP1=0, auxDP2=0, auxDS1=0, auxDS2=0, geral=0, lim;
+    if(tam < 5)
+        lim = tam;
+    if(tam >= 5)
+        lim = 5;
     for(int i = 0; i < tam; i++){
         auxH1=0;
         auxH2=0;
@@ -46,7 +50,7 @@ bool verificacao(int **matriz, int **selecao, int &tam, int &jogador, bool ia=fa
                 auxDS2++;
             }
         // verificação final
-            if(auxH1==tam or auxH2==tam or auxV1==tam or auxV2==tam or auxDP1==tam or auxDP2==tam or auxDS1==tam or auxDS2==tam){
+            if(auxH1==lim or auxH2==lim or auxV1==lim or auxV2==lim or auxDP1==lim or auxDP2==lim or auxDS1==lim or auxDS2==lim){
                 if(ia==false){
                     desenhar(matriz, selecao, tam);
                     cout << "\n\n"; centralizar("Parabéns ao jogador "); cout << jogador << "!" << "\n\n";

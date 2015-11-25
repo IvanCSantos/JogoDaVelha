@@ -50,22 +50,13 @@ void LimparMatriz(int **matriz, int &tam){ // função para limpar a matriz toda v
 }
 
 void desenhar(int **matriz, int **selecao, int &tam){
+    int reducao=(tam*2)-1;
     gotoxy(1, 1); // limpa a tela toda vez que desenhar
     cout << "\n\n";
     for(int i = 0; i < tam; i++)
     {
         cout << "\n";
-        switch(tam){ // centraliza a velha no console, mas com -x caracteres (depende do tam) para continuar centralizada mesmo após preenchimento dos valores da matriz
-            case 3:
-                centralizar("", 5);
-                break;
-            case 4:
-                centralizar("", 7);
-                break;
-            case 5:
-                centralizar("", 9);
-                break;
-            }
+        centralizar("", reducao);
         for(int j = 0; j < tam; j++)
         {
             if(j == 0){ // se for a primeira coluna, deixa um espaço em branco para alinhamento
@@ -109,6 +100,21 @@ void desenhar(int **matriz, int **selecao, int &tam){
                     break;
                 case 5:
                     centralizar("-------------------"); // separação de linha da velha
+                    break;
+                case 6:
+                    centralizar("-----------------------"); // separação de linha da velha
+                    break;
+                case 7:
+                    centralizar("---------------------------"); // separação de linha da velha
+                    break;
+                case 8:
+                    centralizar("-------------------------------"); // separação de linha da velha
+                    break;
+                case 9:
+                    centralizar("-----------------------------------"); // separação de linha da velha
+                    break;
+                case 10:
+                    centralizar("---------------------------------------"); // separação de linha da velha
                     break;
             }
         }
@@ -185,7 +191,7 @@ bool verificacao(int **matriz, int **selecao, int &tam, int &jogador, bool ia=fa
     }
 }
 
-void vet_guia(int vetL[26], int vetC[26], int &tam, int **matriz){ // função para o vetor que guia no processo da entrada na matriz
+void vet_guia(int vetL[101], int vetC[101], int &tam, int **matriz){ // função para o vetor que guia no processo da entrada na matriz
     int valor=0, aux=1;
     for(int i = 1; i <= tam*tam; i++){ // vetor guia das linhas, cria um vetor conforme o tamanho, ex: 0, 0, 0, 1, 1, 1, 2, 2, 2.
         if (aux > tam){
@@ -266,7 +272,7 @@ void entrada(int **matriz, int **selecao, int &tam, int &jogador){
 void jogadorxcomputador(int **matriz, int **selecao, int &tam, int &dificuldade){ // função que controla o jogador x computador
     bool vencer = false, computador = true;
     int jogador = 1;
-    int vetL[26], vetC[26];
+    int vetL[101], vetC[101];
     vet_guia(vetL, vetC, tam, matriz); // chama a função para criar o vetor guia que ajuda a manipular a matriz
     while(vencer == false){ // enquanto ninguém vencer executa o loop de procedimentos
         jogador=1;
@@ -287,7 +293,7 @@ void jogadorxcomputador(int **matriz, int **selecao, int &tam, int &dificuldade)
 void jogadorxjogador(int **matriz, int **selecao, int &tam){ // função que controla o jogador x jogador
     bool vencer = false;
     int jogador = 1;
-    int vetL[26], vetC[26];
+    int vetL[101], vetC[101];
     vet_guia(vetL, vetC, tam, matriz); // chama a função para criar o vetor guia que ajuda a manipular a matriz
     while(vencer == false){ // enquanto ninguém vencer executa o loop de procedimentos
         desenhar(matriz, selecao, tam);
@@ -329,7 +335,7 @@ int sair(){
 
 void menu_comojogar(int &tam, int &dificuldade){ // texto de como jogar
     system("cls");
-    cout << "\n";
+    cout << "\n\n\n";
     cor(VERDE_ESCURO);
     centralizar("Como jogar:"); cout << "\n\n";
     cor(PRETO);
@@ -341,40 +347,29 @@ void menu_comojogar(int &tam, int &dificuldade){ // texto de como jogar
 void menu_tam(int &tam){
     system("cls");
     int opcao; // variavel local para armazenar a opção escolhida
-    cout << "\n";
+    cout << "\n\n\n";
     cor(VERDE_ESCURO);
-    centralizar("Digite o número do tamanho desejado:"); cout << "\n\n";
+    centralizar("Digite o número do tamanho desejado (de 3 à 10):"); cout << "\n\n";
     cor(PRETO);
-    centralizar("1. 3x3"); cout << "\n";
-    centralizar("2. 4x4"); cout << "\n";
-    centralizar("3. 5x5"); cout << "\n\n";
-    centralizar("Opção: ");
-    cin >> opcao;
-    switch(opcao) // define o tamanho da matriz com base na escolha do usuário
-    {
-        case 1:
-            tam = 3;
-            break;
-        case 2:
-            tam = 4;
-            break;
-        case 3:
-            tam = 5;
-            break;
-    }
+    centralizar("Tamanho: ", 1);
+    cin >> tam; // define o tamanho da matriz com base na escolha do usuário
+    if(tam < 3 or tam > 10)
+        menu_tam(tam);
 }
 
 void menu_dificuldade(int &dificuldade){
     system("cls");
     int opcao; // variavel local para armazenar a opção escolhida
-    cout << "\n";
+    cout << "\n\n\n";
     cor(VERDE_ESCURO);
     centralizar("Digite o número da dificuldade desejada"); cout << "\n\n";
     cor(PRETO);
     centralizar("1. Fácil"); cout << "\n";
     centralizar("2. Difícil"); cout << "\n\n";
-    centralizar("Opção: ");
+    centralizar("Opção: ", 1);
     cin >> opcao;
+    if(opcao < 1 or opcao > 2)
+        menu_dificuldade(dificuldade);
     dificuldade = opcao; // define a dificuldade do jogo com base na escolha do usuário
 }
 
@@ -382,7 +377,7 @@ void menu(int &tam, int &dificuldade){
     system("cls");
     int opcao; // variavel local para armazenar a opção escolhida
     bool saiu=false;
-    cout << "\n";
+    cout << "\n\n\n";
     cor(VERDE_ESCURO);
     centralizar("BEM-VINDO AO JOGO DA VELHA!"); cout << "\n\n";
     cor(PRETO);
@@ -391,8 +386,10 @@ void menu(int &tam, int &dificuldade){
     centralizar("2. Jogador vs. Jogador"); cout << "\n";
     centralizar("3. Como jogar"); cout << "\n";
     centralizar("4. Sair"); cout << "\n\n";
-    centralizar("Opção: ");
+    centralizar("Opção: ", 1);
     cin >> opcao;
+    if(opcao < 1 or opcao > 4)
+        menu(tam, dificuldade);
     if(opcao==4)
         saiu=true;
     if(saiu==false)
@@ -426,9 +423,43 @@ void menu(int &tam, int &dificuldade){
     }
 }
 
+bool DimensaoJanela(int largura, int altura)
+    {
+    _COORD coord;
+    coord.X = largura;
+    coord.Y = altura;
+
+    _SMALL_RECT Rect;
+    Rect.Top = 0;
+    Rect.Left = 0;
+    Rect.Bottom = altura - 1;
+    Rect.Right = largura - 1;
+
+    HANDLE Handle = GetStdHandle(STD_OUTPUT_HANDLE);
+    if (Handle == NULL)
+        {
+        cout << GetLastError();
+        return FALSE;
+        }
+
+    if(!SetConsoleScreenBufferSize(Handle, coord))
+        {
+        cout << GetLastError();
+        return FALSE;
+        }
+
+    if(!SetConsoleWindowInfo(Handle, TRUE, &Rect))
+        {
+        cout << GetLastError();
+        return FALSE;
+        }
+    return TRUE;
+}
+
 int main()
 {
     system("color f0"); // cor do console
+    DimensaoJanela(80, 30);
     setlocale(LC_ALL, "Portuguese_Brazil"); // para a acentuação funcionar
     srand(time(NULL)); // para usar random
     int tam = 3, dificuldade = 1; // variáveis int

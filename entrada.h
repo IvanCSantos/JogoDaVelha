@@ -46,16 +46,16 @@ void entrada(int **matriz, int **selecao, int &tam, int &jogador){
                     break;
             }
             if(opL >= tam){ // impede que a posição passe dos limites da matriz
-                opL=tam-1;
-            }
-            if(opL < 0){
                 opL=0;
             }
+            if(opL < 0){
+                opL=tam-1;
+            }
             if(opC >= tam){
-                opC=tam-1;
+                opC=0;
             }
             if(opC < 0){
-                opC=0;
+                opC=tam-1;
             }
             selecao[opL][opC]=3; // insere a posição desejada na matriz seleção
             desenhar(matriz, selecao, tam);

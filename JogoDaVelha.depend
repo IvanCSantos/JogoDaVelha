@@ -151,3 +151,79 @@
 
 1448447392 d:\github\jogodavelha\criarmatriz.h
 
+1448465313 source:c:\users\santosi\documents\github\jogodavelha\main.cpp
+	<iostream>
+	<locale.h>
+	<windows.h>
+	<stdlib.h>
+	<time.h>
+	"dimensaojanela.h"
+	"menu.h"
+
+1448465313 c:\users\santosi\documents\github\jogodavelha\dimensaojanela.h
+	<windows.h>
+
+1448465317 c:\users\santosi\documents\github\jogodavelha\menu.h
+	"jogadorxcomputador.h"
+	"jogadorxjogador.h"
+	"centralizar.h"
+	"cor.h"
+	"cores.h"
+	"limparmatriz.h"
+	"deletarmatriz.h"
+	"criarmatriz.h"
+
+1448465313 c:\users\santosi\documents\github\jogodavelha\jogadorxcomputador.h
+	"vet_guia.h"
+	"verificacao.h"
+	"desenhar.h"
+	"ia.h"
+	"entrada.h"
+
+1448465317 c:\users\santosi\documents\github\jogodavelha\vet_guia.h
+
+1448489730 c:\users\santosi\documents\github\jogodavelha\verificacao.h
+	"desenhar.h"
+	"centralizar.h"
+
+1448465313 c:\users\santosi\documents\github\jogodavelha\desenhar.h
+	"gotoxy.h"
+	"cores.h"
+	"cor.h"
+	"centralizar.h"
+
+1448465313 c:\users\santosi\documents\github\jogodavelha\gotoxy.h
+	<windows.h>
+
+1448465313 c:\users\santosi\documents\github\jogodavelha\cores.h
+
+1448465313 c:\users\santosi\documents\github\jogodavelha\cor.h
+	<windows.h>
+
+1448465313 c:\users\santosi\documents\github\jogodavelha\centralizar.h
+	<string.h>
+
+1448465313 c:\users\santosi\documents\github\jogodavelha\ia.h
+	"centralizar.h"
+
+1448490138 c:\users\santosi\documents\github\jogodavelha\entrada.h
+	<conio.h>
+	"teclas.h"
+	"centralizar.h"
+	"desenhar.h"
+	"limparmatriz.h"
+
+1448465317 c:\users\santosi\documents\github\jogodavelha\teclas.h
+
+1448465313 c:\users\santosi\documents\github\jogodavelha\limparmatriz.h
+
+1448489986 c:\users\santosi\documents\github\jogodavelha\jogadorxjogador.h
+	"vet_guia.h"
+	"desenhar.h"
+	"entrada.h"
+	"verificacao.h"
+
+1448465313 c:\users\santosi\documents\github\jogodavelha\deletarmatriz.h
+
+1448465313 c:\users\santosi\documents\github\jogodavelha\criarmatriz.h
+

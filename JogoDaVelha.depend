@@ -75,3 +75,79 @@
 
 1448447392 c:\users\andréluiz\desktop\jogodavelha-master\criarmatriz.h
 
+1448447392 source:d:\github\jogodavelha\main.cpp
+	<iostream>
+	<locale.h>
+	<windows.h>
+	<stdlib.h>
+	<time.h>
+	"dimensaojanela.h"
+	"menu.h"
+
+1448447392 d:\github\jogodavelha\dimensaojanela.h
+	<windows.h>
+
+1448447392 d:\github\jogodavelha\menu.h
+	"jogadorxcomputador.h"
+	"jogadorxjogador.h"
+	"centralizar.h"
+	"cor.h"
+	"cores.h"
+	"limparmatriz.h"
+	"deletarmatriz.h"
+	"criarmatriz.h"
+
+1448447392 d:\github\jogodavelha\jogadorxcomputador.h
+	"vet_guia.h"
+	"verificacao.h"
+	"desenhar.h"
+	"ia.h"
+	"entrada.h"
+
+1448447392 d:\github\jogodavelha\vet_guia.h
+
+1448447392 d:\github\jogodavelha\verificacao.h
+	"desenhar.h"
+	"centralizar.h"
+
+1448447392 d:\github\jogodavelha\desenhar.h
+	"gotoxy.h"
+	"cores.h"
+	"cor.h"
+	"centralizar.h"
+
+1448447392 d:\github\jogodavelha\gotoxy.h
+	<windows.h>
+
+1448447392 d:\github\jogodavelha\cores.h
+
+1448447392 d:\github\jogodavelha\cor.h
+	<windows.h>
+
+1448447392 d:\github\jogodavelha\centralizar.h
+	<string.h>
+
+1448447392 d:\github\jogodavelha\ia.h
+	"centralizar.h"
+
+1448447392 d:\github\jogodavelha\entrada.h
+	<conio.h>
+	"teclas.h"
+	"centralizar.h"
+	"desenhar.h"
+	"limparmatriz.h"
+
+1448447392 d:\github\jogodavelha\teclas.h
+
+1448447392 d:\github\jogodavelha\limparmatriz.h
+
+1448447392 d:\github\jogodavelha\jogadorxjogador.h
+	"vet_guia.h"
+	"desenhar.h"
+	"entrada.h"
+	"verificacao.h"
+
+1448447392 d:\github\jogodavelha\deletarmatriz.h
+
+1448447392 d:\github\jogodavelha\criarmatriz.h
+

@@ -333,7 +333,7 @@ void menu_comojogar(int &tam, int &dificuldade){ // texto de como jogar
     cor(VERDE_ESCURO);
     centralizar("Como jogar:"); cout << "\n\n";
     cor(PRETO);
-    centralizar("Controle do cursor: W, A, S, D"); cout << "\n\n";
+    centralizar("Controle do cursor: setas do teclado"); cout << "\n\n";
     centralizar("Inserir jogada: ENTER"); cout << "\n\n";
     system("pause");
 }

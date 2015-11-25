@@ -1,5 +1,6 @@
 #ifndef CENTRALIZAR_H_INCLUDED
 #define CENTRALIZAR_H_INCLUDED
+#include <string.h>
 using namespace std;
 
 void centralizar(char* c, int menos = 0) // função para centralizar uma string no console

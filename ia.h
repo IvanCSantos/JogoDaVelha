@@ -1,6 +1,7 @@
 #ifndef IA_H_INCLUDED
 #define IA_H_INCLUDED
 #include "centralizar.h"
+using namespace std;
 
 int ia(int **matriz, int vetL[26], int vetC[26], int &tam, int &dificuldade){
     int opcao;

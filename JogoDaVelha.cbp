@@ -48,11 +48,15 @@
 		<Unit filename="entrada.h" />
 		<Unit filename="gotoxy.h" />
 		<Unit filename="ia.h" />
+		<Unit filename="icon1.ico" />
 		<Unit filename="jogadorxcomputador.h" />
 		<Unit filename="jogadorxjogador.h" />
 		<Unit filename="limparmatriz.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="menu.h" />
+		<Unit filename="resource.rc">
+			<Option compilerVar="WINDRES" />
+		</Unit>
 		<Unit filename="teclas.h" />
 		<Unit filename="verificacao.h" />
 		<Unit filename="vet_guia.h" />

@@ -390,7 +390,7 @@ void menu(int &tam, int &dificuldade){
     cin >> opcao;
     if(opcao < 1 or opcao > 4)
         menu(tam, dificuldade);
-    if(opcao==4)
+    if(opcao==4 or opcao==3)
         saiu=true;
     if(saiu==false)
         menu_tam(tam);

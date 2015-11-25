@@ -13,7 +13,7 @@ void jogadorxjogador(int **matriz, int **selecao, int &tam){ // função que contr
     int jogador = 1;
     int vetL[101], vetC[101];
     vet_guia(vetL, vetC, tam, matriz); // chama a função para criar o vetor guia que ajuda a manipular a matriz
-    DWORD tempo1 = GetTickCount();
+    float tempo1 = GetTickCount();
     while(vencer == false){ // enquanto ninguém vencer executa o loop de procedimentos
         desenhar(matriz, selecao, tam);
         entrada(matriz, selecao, tam, jogador); // entrada do jogador
@@ -27,10 +27,13 @@ void jogadorxjogador(int **matriz, int **selecao, int &tam){ // função que contr
             }
         }
     }
-    DWORD tempo2 = GetTickCount();
+    float tempo2 = GetTickCount();
     float tempo = (tempo2-tempo1)/1000;
-    cout<<"Você levou "<<tempo<<" segundos"<<endl;
-    system("pause");
+    cout << "\n\n"; centralizar("          "); cout << "\n";
+    centralizar("Tempo de jogo: ", 8);
+    cout << tempo << " segundos\n\n\n\n\n\n\n";
+    centralizar("Pressione ENTER");
+    _getch();
 }
 
 #endif // JOGADORXJOGADOR_H_INCLUDED

@@ -97,7 +97,7 @@
 	"deletarmatriz.h"
 	"criarmatriz.h"
 
-1448447392 d:\github\jogodavelha\jogadorxcomputador.h
+1448471565 d:\github\jogodavelha\jogadorxcomputador.h
 	"vet_guia.h"
 	"verificacao.h"
 	"desenhar.h"
@@ -130,7 +130,7 @@
 1448447392 d:\github\jogodavelha\ia.h
 	"centralizar.h"
 
-1448447392 d:\github\jogodavelha\entrada.h
+1448471565 d:\github\jogodavelha\entrada.h
 	<conio.h>
 	"teclas.h"
 	"centralizar.h"
@@ -141,7 +141,7 @@
 
 1448447392 d:\github\jogodavelha\limparmatriz.h
 
-1448447392 d:\github\jogodavelha\jogadorxjogador.h
+1448480242 d:\github\jogodavelha\jogadorxjogador.h
 	"vet_guia.h"
 	"desenhar.h"
 	"entrada.h"

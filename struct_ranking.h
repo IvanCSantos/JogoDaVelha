@@ -4,7 +4,7 @@ using namespace std;
 
 struct ranking{
 		string nome;
-		int tempo;
+		float tempo;
 		int modo;
 };
 

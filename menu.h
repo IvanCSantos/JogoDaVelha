@@ -9,6 +9,8 @@
 #include "limparmatriz.h"
 #include "deletarmatriz.h"
 #include "criarmatriz.h"
+#include "mostrar_ranking.h"
+#include "carregar_ranking.h"
 
 using namespace std;
 
@@ -21,11 +23,12 @@ void menu_comojogar(int &tam, int &dificuldade){ // texto de como jogar
     system("cls");
     cout << "\n\n\n";
     cor(VERDE_ESCURO);
-    centralizar("Como jogar:"); cout << "\n\n";
+    centralizar("COMO JOGAR"); cout << "\n\n";
     cor(PRETO);
     centralizar("Controle do cursor: setas do teclado"); cout << "\n\n";
-    centralizar("Inserir jogada: ENTER"); cout << "\n\n";
-    system("pause");
+    centralizar("Inserir jogada: ENTER"); cout << "\n\n\n\n";
+    centralizar("Pressione qualquer tecla para voltar");
+    _getch();
 }
 
 string menu_nome(int jogador){
@@ -71,9 +74,9 @@ void menu_dificuldade(int &dificuldade){
     dificuldade = opcao; // define a dificuldade do jogo com base na escolha do usuário
 }
 
-void menu(int &tam, int &dificuldade){
+void menu(int &tam, int &dificuldade, ranking ranking[10]){
     system("cls");
-    int opcao, jogador=1; // variavel local para armazenar a opção escolhida
+    int opcao, jogador=1, num; // variavel local para armazenar a opção escolhida
     string jogador1, jogador2;
     bool saiu=false;
     cout << "\n\n\n";
@@ -83,13 +86,14 @@ void menu(int &tam, int &dificuldade){
     centralizar("Digite o número da opção desejada:"); cout << "\n\n";
     centralizar("1. Jogador vs. Computador"); cout << "\n";
     centralizar("2. Jogador vs. Jogador"); cout << "\n";
-    centralizar("3. Como jogar"); cout << "\n";
-    centralizar("4. Sair"); cout << "\n\n";
+    centralizar("3. Ranking TOP 10"); cout << "\n";
+    centralizar("4. Como jogar"); cout << "\n";
+    centralizar("5. Sair"); cout << "\n\n";
     centralizar("Opção: ", 1);
     cin >> opcao;
-    if(opcao < 1 or opcao > 4)
-        menu(tam, dificuldade);
-    if(opcao==4 or opcao==3)
+    if(opcao < 1 or opcao > 5)
+        menu(tam, dificuldade, ranking);
+    if(opcao > 2)
         saiu=true;
     if(saiu==false)
         menu_tam(tam);
@@ -105,7 +109,7 @@ void menu(int &tam, int &dificuldade){
             jogadorxcomputador(matriz, selecao, tam, dificuldade, jogador, jogador1);
             DeletarMatriz(matriz);
             DeletarMatriz(selecao);
-            menu(tam, dificuldade);
+            menu(tam, dificuldade, ranking);
             break;
         case 2:
             jogador1 = menu_nome(1);
@@ -113,13 +117,18 @@ void menu(int &tam, int &dificuldade){
             jogadorxjogador(matriz, selecao, tam, jogador, jogador1, jogador2);
             DeletarMatriz(matriz);
             DeletarMatriz(selecao);
-            menu(tam, dificuldade);
+            menu(tam, dificuldade, ranking);
             break;
         case 3:
-            menu_comojogar(tam, dificuldade);
-            menu(tam, dificuldade);
+            CarregarRanking(ranking, num);
+            MostrarRanking(ranking, num);
+            menu(tam, dificuldade, ranking);
             break;
         case 4:
+            menu_comojogar(tam, dificuldade);
+            menu(tam, dificuldade, ranking);
+            break;
+        case 5:
             sair();
             break;
     }

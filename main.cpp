@@ -30,5 +30,5 @@ int main()
     srand(time(NULL)); // para usar random
     int tam = 3, dificuldade = 1; // variáveis int
     ranking ranking[10];
-    menu(tam, dificuldade); // chama o menu
+    menu(tam, dificuldade, ranking); // chama o menu
 }

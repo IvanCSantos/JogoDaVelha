@@ -31,7 +31,7 @@ void jogadorxjogador(int **matriz, int **selecao, int &tam, int &jogador, string
     cout << "\n\n"; centralizar("          "); cout << "\n";
     centralizar("Tempo de jogo: ", 8);
     cout << tempo << " segundos\n\n\n\n\n\n\n";
-    centralizar("Pressione ENTER");
+    centralizar("Pressione qualquer tecla para voltar");
     _getch();
 }
 

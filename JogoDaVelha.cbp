@@ -38,6 +38,7 @@
 		<Unit filename="JogoDaVelha.cbp" />
 		<Unit filename="JogoDaVelha.depend" />
 		<Unit filename="JogoDaVelha.layout" />
+		<Unit filename="carregar_ranking.h" />
 		<Unit filename="centralizar.h" />
 		<Unit filename="cor.h" />
 		<Unit filename="cores.h" />
@@ -54,9 +55,12 @@
 		<Unit filename="limparmatriz.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="menu.h" />
+		<Unit filename="mostrar_ranking.h" />
+		<Unit filename="ranking.txt" />
 		<Unit filename="resource.rc">
 			<Option compilerVar="WINDRES" />
 		</Unit>
+		<Unit filename="struct_ranking.h" />
 		<Unit filename="teclas.h" />
 		<Unit filename="verificacao.h" />
 		<Unit filename="vet_guia.h" />

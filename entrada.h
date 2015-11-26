@@ -9,17 +9,20 @@
 
 using namespace std;
 
-void entrada(int **matriz, int **selecao, int &tam, int &jogador){
+void entrada(int **matriz, int **selecao, int &tam, int &jogador, string jogador1, string jogador2=""){
     int opcao, opL=0, opC=0, c=0;
     bool jogou=false; // variável que controla o loop de jogada
     system("cls");
     LimparMatriz(selecao, tam);
     selecao[0][0]=3; // sempre que começar uma nova entrada, volta o cursor para a primeira posição
     do {
-        desenhar(matriz, selecao, tam);
+        desenhar(matriz, selecao, tam, jogador);
         cout << "\n\n";
-        centralizar("Jogador ");
-        cout << jogador << "\n";
+        centralizar("Vez de ", 2);
+        if(jogador==1)
+            cout << jogador1 << "\n";
+        else
+            cout << jogador2 << "\n";
             c=0;
             switch((c=_getch())) { // C será o código da tecla pressionada
                 case KEY_UP: // caso for tecla para cima (W) diminui a linha em 1
@@ -58,7 +61,7 @@ void entrada(int **matriz, int **selecao, int &tam, int &jogador){
                 opC=tam-1;
             }
             selecao[opL][opC]=3; // insere a posição desejada na matriz seleção
-            desenhar(matriz, selecao, tam);
+            desenhar(matriz, selecao, tam, jogador);
     } while(jogou==false); // repete o loop de posição até que seja jogado numa posição
 }
 

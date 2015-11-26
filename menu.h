@@ -28,6 +28,20 @@ void menu_comojogar(int &tam, int &dificuldade){ // texto de como jogar
     system("pause");
 }
 
+string menu_nome(int jogador){
+    string nome;
+    system("cls");
+    cout << "\n\n\n";
+    cor(VERDE_ESCURO);
+    centralizar("NOME DO JOGADOR");
+    cout << "\n\n";
+    cor(PRETO);
+    centralizar("Nome do jogador ", 1); cout << jogador << ":\n\n";
+    centralizar("", 4);
+    cin >> nome;
+    return nome;
+}
+
 void menu_tam(int &tam){
     system("cls");
     int opcao; // variavel local para armazenar a opção escolhida
@@ -59,7 +73,8 @@ void menu_dificuldade(int &dificuldade){
 
 void menu(int &tam, int &dificuldade){
     system("cls");
-    int opcao; // variavel local para armazenar a opção escolhida
+    int opcao, jogador=1; // variavel local para armazenar a opção escolhida
+    string jogador1, jogador2;
     bool saiu=false;
     cout << "\n\n\n";
     cor(VERDE_ESCURO);
@@ -86,13 +101,16 @@ void menu(int &tam, int &dificuldade){
     {
         case 1:
             menu_dificuldade(dificuldade);
-            jogadorxcomputador(matriz, selecao, tam, dificuldade);
+            jogador1 = menu_nome(1);
+            jogadorxcomputador(matriz, selecao, tam, dificuldade, jogador, jogador1);
             DeletarMatriz(matriz);
             DeletarMatriz(selecao);
             menu(tam, dificuldade);
             break;
         case 2:
-            jogadorxjogador(matriz, selecao, tam);
+            jogador1 = menu_nome(1);
+            jogador2 = menu_nome(2);
+            jogadorxjogador(matriz, selecao, tam, jogador, jogador1, jogador2);
             DeletarMatriz(matriz);
             DeletarMatriz(selecao);
             menu(tam, dificuldade);

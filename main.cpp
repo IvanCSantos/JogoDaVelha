@@ -18,6 +18,7 @@
 
 #include "dimensaojanela.h"
 #include "menu.h"
+#include "struct_ranking.h"
 
 using namespace std;
 
@@ -28,5 +29,6 @@ int main()
     setlocale(LC_ALL, "Portuguese_Brazil"); // para a acentuação funcionar
     srand(time(NULL)); // para usar random
     int tam = 3, dificuldade = 1; // variáveis int
+    ranking ranking[10];
     menu(tam, dificuldade); // chama o menu
 }

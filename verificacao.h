@@ -52,16 +52,16 @@ bool verificacao(int **matriz, int **selecao, int &tam, int &jogador, bool ia=fa
         // verificação final
             if(auxH1==lim or auxH2==lim or auxV1==lim or auxV2==lim or auxDP1==lim or auxDP2==lim or auxDS1==lim or auxDS2==lim){
                 if(ia==false){
-                    desenhar(matriz, selecao, tam);
+                    desenhar(matriz, selecao, tam, jogador);
                     cout << "\n"; centralizar("Parabéns ao jogador ", 2); cout << jogador << "!";
                     return true;
                 } else if(ia==true) {
                     if(jogador==1){
-                        desenhar(matriz, selecao, tam);
+                        desenhar(matriz, selecao, tam, jogador);
                         cout << "\n"; centralizar("Parabéns ao jogador 1!");
                     }
                     if(jogador==2){
-                        desenhar(matriz, selecao, tam);
+                        desenhar(matriz, selecao, tam, jogador);
                         cout << "\n"; centralizar("Parabéns ao computador!");
                     }
 
@@ -69,7 +69,7 @@ bool verificacao(int **matriz, int **selecao, int &tam, int &jogador, bool ia=fa
                 }
             }
             if(geral==tam*tam){ // verificação velha
-                desenhar(matriz, selecao, tam);
+                desenhar(matriz, selecao, tam, jogador);
                 cout << "\n"; centralizar("Deu velha!");
                 return true;
             }

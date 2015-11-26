@@ -8,7 +8,7 @@
 
 using namespace std;
 
-void desenhar(int **matriz, int **selecao, int &tam){
+void desenhar(int **matriz, int **selecao, int &tam, int &jogador){
     int reducao=(tam*2)-1;
     gotoxy(1, 1); // limpa a tela toda vez que desenhar
     cout << "\n\n";
@@ -26,7 +26,10 @@ void desenhar(int **matriz, int **selecao, int &tam){
             }
             if(selecao[i][j]==3 and matriz[i][j]==0){ // valor 3 = posição selecionada - insere apenas se não tiver nenhum valor na matriz principal
                 cor(VERDE_ESCURO); // define a cor do cursor como verde escuro
-                cout << "X";
+                if(jogador==1)
+                    cout << "X";
+                else
+                    cout << "O";
                 cor(PRETO);
             }
             switch(matriz[i][j]){

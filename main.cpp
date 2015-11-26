@@ -18,15 +18,17 @@
 
 #include "dimensaojanela.h"
 #include "menu.h"
+#include "struct_ranking.h"
 
 using namespace std;
 
 int main()
 {
     system("color f0"); // cor do console
-    DimensaoJanela(80, 30);
+    DimensaoJanela(90, 30);
     setlocale(LC_ALL, "Portuguese_Brazil"); // para a acentuação funcionar
     srand(time(NULL)); // para usar random
     int tam = 3, dificuldade = 1; // variáveis int
-    menu(tam, dificuldade); // chama o menu
+    ranking ranking[10];
+    menu(tam, dificuldade, ranking); // chama o menu
 }

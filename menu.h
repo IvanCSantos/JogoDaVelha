@@ -11,13 +11,13 @@
 #include "criarmatriz.h"
 #include "mostrar_ranking.h"
 #include "carregar_ranking.h"
+#include "ordenar_ranking.h"
 
 using namespace std;
 
 int sair(){
     return EXIT_FAILURE; // retorna algum valor para sair do programa
 }
-
 
 void menu_comojogar(int &tam, int &dificuldade){ // texto de como jogar
     system("cls");
@@ -76,7 +76,7 @@ void menu_dificuldade(int &dificuldade){
 
 void menu(int &tam, int &dificuldade, ranking ranking[10]){
     system("cls");
-    int opcao, jogador=1, num; // variavel local para armazenar a opção escolhida
+    int opcao, jogador=1, num, ordenacao[10]={0}; // variavel local para armazenar a opção escolhida
     string jogador1, jogador2;
     bool saiu=false;
     cout << "\n\n\n";
@@ -121,7 +121,8 @@ void menu(int &tam, int &dificuldade, ranking ranking[10]){
             break;
         case 3:
             CarregarRanking(ranking, num);
-            MostrarRanking(ranking, num);
+            OrdenarRanking(ranking, ordenacao, num);
+            MostrarRanking(ranking, ordenacao, num);
             menu(tam, dificuldade, ranking);
             break;
         case 4:

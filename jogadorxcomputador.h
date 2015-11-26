@@ -30,7 +30,7 @@ void jogadorxcomputador(int **matriz, int **selecao, int &tam, int &dificuldade,
     }
     float tempo2 = GetTickCount();
     float tempo = (tempo2-tempo1)/1000;
-    cout << "\n"; centralizar("                   "); cout << "\n";
+    cout << "\n\n"; centralizar("                   "); cout << "\n";
     centralizar("Tempo de jogo: ", 8);
     cout << tempo << " segundos\n\n\n\n\n";
     centralizar("Pressione qualquer tecla para voltar");

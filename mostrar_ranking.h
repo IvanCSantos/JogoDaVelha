@@ -10,7 +10,7 @@
 
 using namespace std;
 
-void MostrarRanking(ranking ranking[10], int num){
+void MostrarRanking(ranking ranking[10], int ordenacao[10], int num){
     system("cls");
     cor(VERDE_ESCURO);
     cout << "\n\n\n";
@@ -21,9 +21,9 @@ void MostrarRanking(ranking ranking[10], int num){
     cor(PRETO);
     for(int i=0; i < num; i++){
         cout << "\t" << i+1 << "\t\t";
-        cout << ranking[i].nome << "\t\t";
-        cout << ranking[i].tempo << "\t\t";
-        cout << ((ranking[i].modo==0)? "Jogador X Computador" : "Jogador X Jogador") << "\n";
+        cout << ranking[ordenacao[i]].nome << "\t\t";
+        cout << ranking[ordenacao[i]].tempo << "\t\t";
+        cout << ((ranking[ordenacao[i]].modo==0)? "Jogador X Computador" : "Jogador X Jogador") << "\n";
     }
     cout << "\n\n\n";
     centralizar("Pressione qualquer tecla para voltar");

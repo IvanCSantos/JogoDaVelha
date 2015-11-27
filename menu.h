@@ -52,7 +52,7 @@ void menu_tam(int &tam){
     cor(VERDE_ESCURO);
     centralizar("Digite o número do tamanho desejado (de 3 à 10):"); cout << "\n\n";
     cor(PRETO);
-    centralizar("Tamanho: ", 1);
+    centralizar("Tamanho: ");
     cin >> tam; // define o tamanho da matriz com base na escolha do usuário
     if(tam < 3 or tam > 10)
         menu_tam(tam);

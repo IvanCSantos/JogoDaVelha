@@ -3,7 +3,7 @@
 #include <string.h>
 using namespace std;
 
-void centralizar(char* c, int menos = 0) // função para centralizar uma string no console
+void centralizar(const char* c, int menos = 0) // função para centralizar uma string no console
 {
     int l=strlen(c); // tamanho da string
     int pos = (int)((90-l)/2);

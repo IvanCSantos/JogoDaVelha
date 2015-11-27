@@ -1,15 +1,18 @@
 #ifndef JOGADORXCOMPUTADOR_H_INCLUDED
 #define JOGADORXCOMPUTADOR_H_INCLUDED
 
+#include "struct_ranking.h"
 #include "vet_guia.h"
 #include "verificacao.h"
 #include "desenhar.h"
 #include "ia.h"
 #include "entrada.h"
+#include "inserir_ranking.h"
+#include "salvar_ranking.h"
 
 using namespace std;
 
-void jogadorxcomputador(int **matriz, int **selecao, int &tam, int &dificuldade, int &jogador, string &jogador1){ // função que controla o jogador x computador
+void jogadorxcomputador(int **matriz, int **selecao, int &tam, int &dificuldade, int &jogador, int &num, string &jogador1, ranking top[10]){ // função que controla o jogador x computador
     bool vencer = false, computador = true;
     int vetL[101], vetC[101], resultado=0;
     vet_guia(vetL, vetC, tam, matriz); // chama a função para criar o vetor guia que ajuda a manipular a matriz
@@ -31,7 +34,11 @@ void jogadorxcomputador(int **matriz, int **selecao, int &tam, int &dificuldade,
     string temp;
     const char *msg;
     cout << "\n\n";
+    float tempo2 = GetTickCount();
+    float tempo = (tempo2-tempo1)/1000;
     if(resultado == 1){
+        InserirRanking(jogador1, tempo, 0, num, top);
+        SalvarRanking(num, top);
         temp="Parabéns ao jogador " + jogador1 + "!";
         msg=temp.c_str();
         centralizar(msg);
@@ -42,8 +49,6 @@ void jogadorxcomputador(int **matriz, int **selecao, int &tam, int &dificuldade,
     if(resultado == 0){
         centralizar("Deu velha!");
     }
-    float tempo2 = GetTickCount();
-    float tempo = (tempo2-tempo1)/1000;
     cout << "\n\n"; centralizar("                   "); cout << "\n";
     centralizar("Tempo de jogo: ", 8);
     cout << tempo << " segundos\n\n\n\n\n";

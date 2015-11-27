@@ -74,7 +74,7 @@ void menu_dificuldade(int &dificuldade){
     dificuldade = opcao; // define a dificuldade do jogo com base na escolha do usuário
 }
 
-void menu(int &tam, int &dificuldade, ranking ranking[10]){
+void menu(int &tam, int &dificuldade, ranking top[10]){
     system("cls");
     int opcao, jogador=1, num, ordenacao[10]={0}; // variavel local para armazenar a opção escolhida
     string jogador1, jogador2;
@@ -92,7 +92,7 @@ void menu(int &tam, int &dificuldade, ranking ranking[10]){
     centralizar("Opção: ", 1);
     cin >> opcao;
     if(opcao < 1 or opcao > 5)
-        menu(tam, dificuldade, ranking);
+        menu(tam, dificuldade, top);
     if(opcao > 2)
         saiu=true;
     if(saiu==false)
@@ -101,33 +101,33 @@ void menu(int &tam, int &dificuldade, ranking ranking[10]){
     int** selecao = CriarMatriz(tam);
     LimparMatriz(matriz, tam); // toda vez que voltar ao menu limpa as matrizes
     LimparMatriz(selecao, tam);
+    CarregarRanking(top, num);
     switch(opcao) // redireciona para outras funções com base na escolha do usuário
     {
         case 1:
             menu_dificuldade(dificuldade);
             jogador1 = menu_nome(1);
-            jogadorxcomputador(matriz, selecao, tam, dificuldade, jogador, jogador1);
+            jogadorxcomputador(matriz, selecao, tam, dificuldade, jogador, num, jogador1, top);
             DeletarMatriz(matriz);
             DeletarMatriz(selecao);
-            menu(tam, dificuldade, ranking);
+            menu(tam, dificuldade, top);
             break;
         case 2:
             jogador1 = menu_nome(1);
             jogador2 = menu_nome(2);
-            jogadorxjogador(matriz, selecao, tam, jogador, jogador1, jogador2);
+            jogadorxjogador(matriz, selecao, tam, jogador, num, jogador1, jogador2, top);
             DeletarMatriz(matriz);
             DeletarMatriz(selecao);
-            menu(tam, dificuldade, ranking);
+            menu(tam, dificuldade, top);
             break;
         case 3:
-            CarregarRanking(ranking, num);
-            OrdenarRanking(ranking, ordenacao, num);
-            MostrarRanking(ranking, ordenacao, num);
-            menu(tam, dificuldade, ranking);
+            OrdenarRanking(top, ordenacao, num);
+            MostrarRanking(top, ordenacao, num);
+            menu(tam, dificuldade, top);
             break;
         case 4:
             menu_comojogar(tam, dificuldade);
-            menu(tam, dificuldade, ranking);
+            menu(tam, dificuldade, top);
             break;
         case 5:
             sair();

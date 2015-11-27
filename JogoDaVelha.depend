@@ -75,7 +75,7 @@
 
 1448447392 c:\users\andréluiz\desktop\jogodavelha-master\criarmatriz.h
 
-1448564346 source:d:\github\jogodavelha\main.cpp
+1448651870 source:d:\github\jogodavelha\main.cpp
 	<iostream>
 	<locale.h>
 	<windows.h>
@@ -88,7 +88,7 @@
 1448447392 d:\github\jogodavelha\dimensaojanela.h
 	<windows.h>
 
-1448600030 d:\github\jogodavelha\menu.h
+1448648961 d:\github\jogodavelha\menu.h
 	"jogadorxcomputador.h"
 	"jogadorxjogador.h"
 	"centralizar.h"
@@ -101,12 +101,15 @@
 	"carregar_ranking.h"
 	"ordenar_ranking.h"
 
-1448597555 d:\github\jogodavelha\jogadorxcomputador.h
+1448647678 d:\github\jogodavelha\jogadorxcomputador.h
+	"struct_ranking.h"
 	"vet_guia.h"
 	"verificacao.h"
 	"desenhar.h"
 	"ia.h"
 	"entrada.h"
+	"inserir_ranking.h"
+	"salvar_ranking.h"
 
 1448447392 d:\github\jogodavelha\vet_guia.h
 
@@ -145,11 +148,14 @@
 
 1448447392 d:\github\jogodavelha\limparmatriz.h
 
-1448599095 d:\github\jogodavelha\jogadorxjogador.h
+1448651089 d:\github\jogodavelha\jogadorxjogador.h
+	"struct_ranking.h"
 	"vet_guia.h"
 	"desenhar.h"
 	"entrada.h"
 	"verificacao.h"
+	"inserir_ranking.h"
+	"salvar_ranking.h"
 
 1448447392 d:\github\jogodavelha\deletarmatriz.h
 
@@ -235,17 +241,22 @@
 
 1448506690 source:d:\github\jogodavelha\resource.rc
 
-1448561991 d:\github\jogodavelha\struct_ranking.h
+1448651089 d:\github\jogodavelha\struct_ranking.h
 
-1448564492 d:\github\jogodavelha\mostrar_ranking.h
+1448652109 d:\github\jogodavelha\mostrar_ranking.h
 	<conio.h>
 	"struct_ranking.h"
 	"cores.h"
 	"cor.h"
 	"centralizar.h"
 
-1448562928 d:\github\jogodavelha\carregar_ranking.h
+1448650980 d:\github\jogodavelha\carregar_ranking.h
 	<fstream>
 
 1448564748 d:\github\jogodavelha\ordenar_ranking.h
+
+1448647546 d:\github\jogodavelha\inserir_ranking.h
+
+1448651399 d:\github\jogodavelha\salvar_ranking.h
+	<fstream>
 

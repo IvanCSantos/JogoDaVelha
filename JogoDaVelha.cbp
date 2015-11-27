@@ -50,6 +50,7 @@
 		<Unit filename="gotoxy.h" />
 		<Unit filename="ia.h" />
 		<Unit filename="icon1.ico" />
+		<Unit filename="inserir_ranking.h" />
 		<Unit filename="jogadorxcomputador.h" />
 		<Unit filename="jogadorxjogador.h" />
 		<Unit filename="limparmatriz.h" />
@@ -61,6 +62,7 @@
 		<Unit filename="resource.rc">
 			<Option compilerVar="WINDRES" />
 		</Unit>
+		<Unit filename="salvar_ranking.h" />
 		<Unit filename="struct_ranking.h" />
 		<Unit filename="teclas.h" />
 		<Unit filename="verificacao.h" />

@@ -1,29 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
 	<ActiveTarget name="Debug" />
-	<File name="main.cpp" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="jogadorxjogador.h" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1321" topLine="0" />
+			<Cursor1 position="1406" topLine="15" />
 		</Cursor>
 	</File>
-	<File name="menu.h" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="carregar_ranking.h" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1088" topLine="24" />
+			<Cursor1 position="706" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="mostrar_ranking.h" open="0" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="entrada.h" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="560" topLine="0" />
+			<Cursor1 position="306" topLine="1" />
 		</Cursor>
 	</File>
-	<File name="verificacao.h" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="struct_ranking.h" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1797" topLine="28" />
-		</Cursor>
-	</File>
-	<File name="resource.rc" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="66" topLine="0" />
+			<Cursor1 position="128" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="centralizar.h" open="0" top="0" tabpos="13" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -31,14 +26,9 @@
 			<Cursor1 position="127" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="struct_ranking.h" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="jogadorxcomputador.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="120" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="desenhar.h" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="219" topLine="8" />
+			<Cursor1 position="220" topLine="15" />
 		</Cursor>
 	</File>
 	<File name="ia.h" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -46,24 +36,44 @@
 			<Cursor1 position="0" topLine="19" />
 		</Cursor>
 	</File>
-	<File name="carregar_ranking.h" open="0" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="inserir_ranking.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="73" topLine="0" />
+			<Cursor1 position="306" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="entrada.h" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="verificacao.h" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="343" topLine="1" />
+			<Cursor1 position="1797" topLine="28" />
 		</Cursor>
 	</File>
-	<File name="jogadorxcomputador.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="desenhar.h" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="779" topLine="9" />
+			<Cursor1 position="219" topLine="8" />
 		</Cursor>
 	</File>
-	<File name="jogadorxjogador.h" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="mostrar_ranking.h" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1219" topLine="9" />
+			<Cursor1 position="484" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="menu.h" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3884" topLine="92" />
+		</Cursor>
+	</File>
+	<File name="resource.rc" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="66" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="salvar_ranking.h" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="111" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="main.cpp" open="1" top="1" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1544" topLine="0" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>

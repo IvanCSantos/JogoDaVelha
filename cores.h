@@ -2,7 +2,7 @@
 #define CORES_H_INCLUDED
 using namespace std;
 
-enum { // enum com todas as constantes de cor simplificadas com um nome mais f·cil
+enum { // enum com todas as constantes de cor simplificadas com um nome mais f√°cil.
     PRETO, AZUL_ESCURO, VERDE_ESCURO, CYAN_ESCURO, VERMELHO_ESCURO, ROXO, AMARELO_ESCURO, CINZA, CINZA_ESCURO, AZUL, VERDE, AZUL_CLARO, VERMELHO, ROSA, AMARELO, BRANCO,
 };
 

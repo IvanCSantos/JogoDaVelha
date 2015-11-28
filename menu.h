@@ -24,10 +24,14 @@ void menu_comojogar(int &tam, int &dificuldade){ // texto de como jogar
     system("cls");
     cout << "\n\n\n";
     cor(VERDE_ESCURO);
-    centralizar("COMO JOGAR"); cout << "\n\n";
+    centralizar("COMO JOGAR"); cout << "\n\n\n";
     cor(PRETO);
-    centralizar("Controle do cursor: setas do teclado"); cout << "\n\n";
-    centralizar("Inserir jogada: ENTER"); cout << "\n\n\n\n";
+    centralizar("CONTROLE"); cout << "\n";
+    centralizar("Controle do cursor: setas do teclado"); cout << "\n";
+    centralizar("Inserir jogada: ENTER"); cout << "\n\n\n";
+    centralizar("COMO GANHAR"); cout << "\n";
+    centralizar("Do tamanho 3 ao tamanho 5 é necessário uma sequência completa para ganhar."); cout << "\n";
+    centralizar("De 5 para cima é necessário uma sequência apenas de 5 para ganhar o jogo"); cout << "\n\n\n\n";
     centralizar("Pressione qualquer tecla para voltar");
     _getch();
 }
@@ -61,15 +65,37 @@ void menu_tam(int &tam){
 
 void menu_dificuldade(int &dificuldade){
     system("cls");
-    int opcao; // variavel local para armazenar a opção escolhida
+    int opcao=1, _opcao, tecla=0, y=6; // variavel local para armazenar a opção escolhida
+    bool enter=false;
     cout << "\n\n\n";
     cor(VERDE_ESCURO);
-    centralizar("Digite o número da dificuldade desejada"); cout << "\n\n";
+    centralizar("Selecione a dificuldade desejada"); cout << "\n\n";
     cor(PRETO);
-    centralizar("1. Fácil"); cout << "\n";
-    centralizar("2. Difícil"); cout << "\n\n";
-    centralizar("Opção: ", 1);
-    cin >> opcao;
+    centralizar("Fácil"); cout << "\n";
+    centralizar("Difícil"); cout << "\n";
+    cor(VERDE_ESCURO);
+    gotoxy(40, y+(opcao-1)); cout << ">"; gotoxy(50, y+(opcao-1)); cout << "<";
+    while(enter==false){
+        tecla=0;
+        _opcao=opcao;
+        gotoxy(45, 8);
+        switch((tecla = _getch())) { // C será o código da tecla pressionada
+            case KEY_UP: // caso for tecla para cima (W) diminui a linha em 1
+                if(opcao == 2)
+                    opcao--;
+                break;
+            case KEY_DOWN: // caso for tecla para baixo (S) aumenta a linha em 1
+                if(opcao == 1)
+                    opcao++;
+                break;
+            case KEY_ENTER: // caso for tecla ENTER insere a jogada na posição selecionada apenas se já estiver vazia
+                enter=true;
+                break;
+        }
+        gotoxy(40, y+(_opcao-1)); cout << " "; gotoxy(50, y+(_opcao-1)); cout << " ";
+        gotoxy(40, y+(opcao-1)); cout << ">"; gotoxy(50, y+(opcao-1)); cout << "<";
+    }
+    cor(PRETO);
     if(opcao < 1 or opcao > 2)
         menu_dificuldade(dificuldade);
     dificuldade = opcao; // define a dificuldade do jogo com base na escolha do usuário
@@ -84,10 +110,10 @@ void menu(int &tam, int &dificuldade, ranking top[10]){
     cor(VERDE_ESCURO);
     centralizar("BEM-VINDO AO JOGO DA VELHA!"); cout << "\n\n";
     cor(PRETO);
-    centralizar("Digite o número da opção desejada:"); cout << "\n\n";
+    centralizar("Selecione a opção desejada:"); cout << "\n\n";
     centralizar("Jogador vs. Computador"); cout << "\n";
     centralizar("Jogador vs. Jogador"); cout << "\n";
-    centralizar("Ranking TOP 10"); cout << "\n";
+    centralizar("Ranking top 10"); cout << "\n";
     centralizar("Como jogar"); cout << "\n";
     centralizar("Sair"); cout << "\n\n";
     cor(VERDE_ESCURO);
@@ -95,6 +121,7 @@ void menu(int &tam, int &dificuldade, ranking top[10]){
     while(enter==false){
         tecla=0;
         _opcao=opcao;
+        gotoxy(45, 14);
         switch((tecla = _getch())) { // C será o código da tecla pressionada
             case KEY_UP: // caso for tecla para cima (W) diminui a linha em 1
                 if(opcao > 1)

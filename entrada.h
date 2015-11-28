@@ -10,7 +10,7 @@
 using namespace std;
 
 void entrada(int **matriz, int **selecao, int &tam, int &jogador, string jogador1, string jogador2=""){
-    int opcao, opL = 0, opC = 0, c = 0;
+    int opcao, opL = 0, opC = 0, _opL, _opC, tecla = 0;
     string temp;
     const char *msg;
     bool jogou = false; // variável que controla o loop de jogada
@@ -23,22 +23,20 @@ void entrada(int **matriz, int **selecao, int &tam, int &jogador, string jogador
         temp="Vez de " + ((jogador == 1)? jogador1 : jogador2);
         msg = temp.c_str();
         centralizar(msg);
-        c=0;
-        switch((c = _getch())) { // C será o código da tecla pressionada
+        tecla=0;
+        _opL=opL;
+        _opC=opC;
+        switch((tecla = _getch())) { // C será o código da tecla pressionada
             case KEY_UP: // caso for tecla para cima (W) diminui a linha em 1
-                selecao[opL][opC]=0;
                 opL--;
                 break;
             case KEY_DOWN: // caso for tecla para baixo (S) aumenta a linha em 1
-                selecao[opL][opC]=0;
                 opL++;
                 break;
             case KEY_RIGHT: // caso for tecla para direita (D) aumenta a coluna em 1
-                selecao[opL][opC]=0;
                 opC++;
                 break;
             case KEY_LEFT: // caso for tecla para a esquerda (A) diminui a coluna em 1
-                selecao[opL][opC]=0;
                 opC--;
                 break;
             case KEY_ENTER: // caso for tecla ENTER insere a jogada na posição selecionada apenas se já estiver vazia
@@ -48,6 +46,7 @@ void entrada(int **matriz, int **selecao, int &tam, int &jogador, string jogador
                 }
                 break;
         }
+        selecao[_opL][_opC]=0;
         if(opL >= tam){ // impede que a posição passe dos limites da matriz
             opL=0;
         }

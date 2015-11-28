@@ -12,6 +12,7 @@
 #include "mostrar_ranking.h"
 #include "carregar_ranking.h"
 #include "ordenar_ranking.h"
+#include "gotoxy.h"
 
 using namespace std;
 
@@ -76,21 +77,41 @@ void menu_dificuldade(int &dificuldade){
 
 void menu(int &tam, int &dificuldade, ranking top[10]){
     system("cls");
-    int opcao, jogador=1, num, ordenacao[10]={0}; // variavel local para armazenar a opção escolhida
+    int opcao=1, jogador=1, num, ordenacao[10]={0}, tecla=0, y=8, _opcao; // variavel local para armazenar a opção escolhida
     string jogador1, jogador2;
-    bool saiu=false;
+    bool saiu=false, enter=false;
     cout << "\n\n\n";
     cor(VERDE_ESCURO);
     centralizar("BEM-VINDO AO JOGO DA VELHA!"); cout << "\n\n";
     cor(PRETO);
     centralizar("Digite o número da opção desejada:"); cout << "\n\n";
-    centralizar("1. Jogador vs. Computador"); cout << "\n";
-    centralizar("2. Jogador vs. Jogador"); cout << "\n";
-    centralizar("3. Ranking TOP 10"); cout << "\n";
-    centralizar("4. Como jogar"); cout << "\n";
-    centralizar("5. Sair"); cout << "\n\n";
-    centralizar("Opção: ", 1);
-    cin >> opcao;
+    centralizar("Jogador vs. Computador"); cout << "\n";
+    centralizar("Jogador vs. Jogador"); cout << "\n";
+    centralizar("Ranking TOP 10"); cout << "\n";
+    centralizar("Como jogar"); cout << "\n";
+    centralizar("Sair"); cout << "\n\n";
+    cor(VERDE_ESCURO);
+    gotoxy(33, y+(opcao-1)); cout << ">"; gotoxy(58, y+(opcao-1)); cout << "<";
+    while(enter==false){
+        tecla=0;
+        _opcao=opcao;
+        switch((tecla = _getch())) { // C será o código da tecla pressionada
+            case KEY_UP: // caso for tecla para cima (W) diminui a linha em 1
+                if(opcao > 1)
+                    opcao--;
+                break;
+            case KEY_DOWN: // caso for tecla para baixo (S) aumenta a linha em 1
+                if(opcao < 5)
+                    opcao++;
+                break;
+            case KEY_ENTER: // caso for tecla ENTER insere a jogada na posição selecionada apenas se já estiver vazia
+                enter=true;
+                break;
+        }
+        gotoxy(33, y+(_opcao-1)); cout << " "; gotoxy(58, y+(_opcao-1)); cout << " ";
+        gotoxy(33, y+(opcao-1)); cout << ">"; gotoxy(58, y+(opcao-1)); cout << "<";
+    }
+    cor(PRETO);
     if(opcao < 1 or opcao > 5)
         menu(tam, dificuldade, top);
     if(opcao > 2)

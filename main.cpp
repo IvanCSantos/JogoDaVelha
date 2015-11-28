@@ -25,8 +25,8 @@ using namespace std;
 int main(){
     system("color f0"); // cor do console
     DimensaoJanela(90, 30); // altera a dimensão da janela do console
-    setlocale(LC_ALL, ""); // para a acentuação funcionar
-    cout.precision(3);
+    setlocale(LC_ALL, "Portuguese_Brazil"); // para a acentuação funcionar
+    setlocale(LC_NUMERIC, "English");
     srand(time(NULL)); // para usar random
     int tam = 3, dificuldade = 1; // variáveis int
     ranking top[10]; // cria o vetor top 10 da struct ranking

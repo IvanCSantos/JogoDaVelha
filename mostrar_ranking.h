@@ -19,6 +19,10 @@ void MostrarRanking(ranking top[10], int ordenacao[10], int num){
     cout << "\tPOSIÇÃO\t\tNOME\t\tTEMPO\t\tMODO DE JOGO\n\n";
     cor(PRETO);
     for(int i=0; i < num; i++){
+        if(top[ordenacao[i]].tempo < 10)
+            cout.precision(3);
+        else
+            cout.precision(4);
         gotoxy(9,i+9);
         cout << i+1;
         gotoxy(25,i+9);

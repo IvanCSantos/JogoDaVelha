@@ -75,7 +75,7 @@
 
 1448447392 c:\users\andréluiz\desktop\jogodavelha-master\criarmatriz.h
 
-1448651870 source:d:\github\jogodavelha\main.cpp
+1448680468 source:d:\github\jogodavelha\main.cpp
 	<iostream>
 	<locale.h>
 	<windows.h>
@@ -126,7 +126,7 @@
 1448447392 d:\github\jogodavelha\gotoxy.h
 	<windows.h>
 
-1448562835 d:\github\jogodavelha\cores.h
+1448680132 d:\github\jogodavelha\cores.h
 
 1448447392 d:\github\jogodavelha\cor.h
 	<windows.h>
@@ -243,7 +243,7 @@
 
 1448651089 d:\github\jogodavelha\struct_ranking.h
 
-1448652109 d:\github\jogodavelha\mostrar_ranking.h
+1448680478 d:\github\jogodavelha\mostrar_ranking.h
 	<conio.h>
 	"struct_ranking.h"
 	"cores.h"

@@ -10,7 +10,7 @@ int ia(int **matriz, int vetL[26], int vetC[26], int &tam, int &dificuldade){
 
     if(dificuldade==1){ // dificuldade fácil
         do{
-            opcao = rand() % (tam*tam) + 1; // numero aleatório entre 1 e tam*tam (9, 16 ou 25)
+            opcao = rand() % (tam*tam) + 1; // numero aleatório entre 1 e tam*tam
         }while(matriz[vetL[opcao]][vetC[opcao]]!=0); // gera um numero aleatório enquanto não achar um campo em branco
         matriz[vetL[opcao]][vetC[opcao]] = 2;
     }

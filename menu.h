@@ -36,6 +36,29 @@ void menu_comojogar(int &tam, int &dificuldade){ // texto de como jogar
     _getch();
 }
 
+int escolher_jogador(){
+    int jogador = rand() % (2) + 1;
+    int num = 1;
+    system("cls");
+    cout << "\n\n\n";
+    cor(VERDE_ESCURO);
+    centralizar("QUEM IRÁ COMEÇAR O JOGO");
+    cout << "\n\n";
+    cor(PRETO);
+    centralizar("Jogador ", 1);
+    for(int i=0; i < 100; i++){
+        gotoxy(50, 50);
+        cout << num;
+        ((num == 1)? num = 2 : num = 1);
+        Sleep(50);
+    }
+    gotoxy(40, 40);
+    cout << jogador << "\n\n\n";
+    centralizar("Pressione qualquer tecla");
+    _getch();
+    return jogador;
+}
+
 string menu_nome(int jogador){
     string nome;
     system("cls");
@@ -103,7 +126,7 @@ void menu_dificuldade(int &dificuldade){
 
 void menu(int &tam, int &dificuldade, ranking top[10]){
     system("cls");
-    int opcao=1, jogador=1, num, ordenacao[10]={0}, tecla=0, y=8, _opcao; // variavel local para armazenar a opção escolhida
+    int opcao=1, jogador, num, ordenacao[10]={0}, tecla=0, y=8, _opcao; // variavel local para armazenar a opção escolhida
     string jogador1, jogador2;
     bool saiu=false, enter=false;
     cout << "\n\n\n";
@@ -155,6 +178,7 @@ void menu(int &tam, int &dificuldade, ranking top[10]){
         case 1:
             menu_dificuldade(dificuldade);
             jogador1 = menu_nome(1);
+            jogador = escolher_jogador();
             jogadorxcomputador(matriz, selecao, tam, dificuldade, jogador, num, jogador1, top);
             DeletarMatriz(matriz);
             DeletarMatriz(selecao);
@@ -163,6 +187,7 @@ void menu(int &tam, int &dificuldade, ranking top[10]){
         case 2:
             jogador1 = menu_nome(1);
             jogador2 = menu_nome(2);
+            jogador = escolher_jogador();
             jogadorxjogador(matriz, selecao, tam, jogador, num, jogador1, jogador2, top);
             DeletarMatriz(matriz);
             DeletarMatriz(selecao);

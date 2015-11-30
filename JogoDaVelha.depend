@@ -88,7 +88,7 @@
 1448447392 d:\github\jogodavelha\dimensaojanela.h
 	<windows.h>
 
-1448910690 d:\github\jogodavelha\menu.h
+1448912434 d:\github\jogodavelha\menu.h
 	"jogadorxcomputador.h"
 	"jogadorxjogador.h"
 	"centralizar.h"
@@ -102,7 +102,7 @@
 	"ordenar_ranking.h"
 	"gotoxy.h"
 
-1448647678 d:\github\jogodavelha\jogadorxcomputador.h
+1448911264 d:\github\jogodavelha\jogadorxcomputador.h
 	"struct_ranking.h"
 	"vet_guia.h"
 	"verificacao.h"

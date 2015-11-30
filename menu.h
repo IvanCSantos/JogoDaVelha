@@ -37,7 +37,7 @@ void menu_comojogar(int &tam, int &dificuldade){ // texto de como jogar
 }
 
 int escolher_jogador(){
-    int jogador = rand() % (2) + 1;
+    int jogador = rand() % 2 + 1;
     int num = 1;
     system("cls");
     cout << "\n\n\n";
@@ -48,9 +48,14 @@ int escolher_jogador(){
     centralizar("Jogador ", 1);
     for(int i=0; i < 100; i++){
         gotoxy(50, 50);
-        cout << num;
-        ((num == 1)? num = 2 : num = 1);
-        Sleep(50);
+        if(i == 99){
+            cout << jogador;
+        } else {
+            cout << num;
+            ((num == 1)? num = 2 : num = 1);
+        }
+        Sleep(25+(i*2));
+        gotoxy(50, 50);
     }
     gotoxy(40, 40);
     cout << jogador << "\n\n\n";

@@ -22,7 +22,7 @@ void jogadorxjogador(int **matriz, int **selecao, int &tam, int &jogador, int &n
         vencer = verificacao(matriz, selecao, tam, jogador, resultado); // faz a verificação e retorna true ou false para a variável vencer
         desenhar(matriz, selecao, tam, jogador);
         if (vencer == false){ // se ninguém venceu ainda, troca de jogador
-            ((jogador == 1)? jogador = 2 : jogador = 1);
+			((jogador == 1)? jogador = 2 : jogador = 1);
         }
     }
     string temp;

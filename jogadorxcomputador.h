@@ -18,15 +18,20 @@ void jogadorxcomputador(int **matriz, int **selecao, int &tam, int &dificuldade,
     vet_guia(vetL, vetC, tam, matriz); // chama a função para criar o vetor guia que ajuda a manipular a matriz
     float tempo1 = GetTickCount();
     while(vencer == false){ // enquanto ninguém vencer executa o loop de procedimentos
-        desenhar(matriz, selecao, tam, jogador);
-        entrada(matriz, selecao, tam, jogador, jogador1); // entrada do jogador
-        desenhar(matriz, selecao, tam, jogador);
-        vencer = verificacao(matriz, selecao, tam, jogador, resultado, computador); // faz a verificação e retorna true ou false para a variável vencer
-        if(vencer==false){
-            ((jogador == 1)? jogador = 2 : jogador = 1);
+        if(jogador == 1){
+            desenhar(matriz, selecao, tam, jogador);
+            entrada(matriz, selecao, tam, jogador, jogador1); // entrada do jogador
+            desenhar(matriz, selecao, tam, jogador);
+            vencer = verificacao(matriz, selecao, tam, jogador, resultado, computador); // faz a verificação e retorna true ou false para a variável vencer
+            if (vencer == false) // se ninguém venceu ainda, troca de jogador
+                ((jogador == 1)? jogador = 2 : jogador = 1);
+        }
+        if(jogador == 2){
             ia(matriz, vetL, vetC, tam, dificuldade); // função que faz a jogada do computador
             Sleep(1000);
             vencer = verificacao(matriz, selecao, tam, jogador, resultado, computador); // faz a verificação e retorna true ou false para a variável vencer
+            if (vencer == false) // se ninguém venceu ainda, troca de jogador
+                ((jogador == 1)? jogador = 2 : jogador = 1);
             desenhar(matriz, selecao, tam, jogador);
         }
     }

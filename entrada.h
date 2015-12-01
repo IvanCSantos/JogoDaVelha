@@ -6,10 +6,12 @@
 #include "centralizar.h"
 #include "desenhar.h"
 #include "limparmatriz.h"
+#include "mostrar_cursor.h"
 
 using namespace std;
 
 void entrada(int **matriz, int **selecao, int &tam, int &jogador, string jogador1, string jogador2=""){
+    mostrar_cursor(false);
     int opcao, opL = 0, opC = 0, _opL, _opC, tecla = 0;
     string temp;
     const char *msg;

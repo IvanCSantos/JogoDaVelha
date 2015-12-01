@@ -88,7 +88,7 @@
 1448447392 d:\github\jogodavelha\dimensaojanela.h
 	<windows.h>
 
-1448912434 d:\github\jogodavelha\menu.h
+1448939008 d:\github\jogodavelha\menu.h
 	"jogadorxcomputador.h"
 	"jogadorxjogador.h"
 	"centralizar.h"
@@ -101,8 +101,9 @@
 	"carregar_ranking.h"
 	"ordenar_ranking.h"
 	"gotoxy.h"
+	"mostrar_cursor.h"
 
-1448911264 d:\github\jogodavelha\jogadorxcomputador.h
+1448939627 d:\github\jogodavelha\jogadorxcomputador.h
 	"struct_ranking.h"
 	"vet_guia.h"
 	"verificacao.h"
@@ -138,18 +139,19 @@
 1448909591 d:\github\jogodavelha\ia.h
 	"centralizar.h"
 
-1448682388 d:\github\jogodavelha\entrada.h
+1448938212 d:\github\jogodavelha\entrada.h
 	<conio.h>
 	"teclas.h"
 	"centralizar.h"
 	"desenhar.h"
 	"limparmatriz.h"
+	"mostrar_cursor.h"
 
 1448447392 d:\github\jogodavelha\teclas.h
 
 1448447392 d:\github\jogodavelha\limparmatriz.h
 
-1448651089 d:\github\jogodavelha\jogadorxjogador.h
+1448939389 d:\github\jogodavelha\jogadorxjogador.h
 	"struct_ranking.h"
 	"vet_guia.h"
 	"desenhar.h"
@@ -260,4 +262,7 @@
 
 1448651399 d:\github\jogodavelha\salvar_ranking.h
 	<fstream>
+
+1448937811 d:\github\jogodavelha\mostrar_cursor.h
+	<windows.h>
 

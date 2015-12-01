@@ -13,6 +13,7 @@
 #include "carregar_ranking.h"
 #include "ordenar_ranking.h"
 #include "gotoxy.h"
+#include "mostrar_cursor.h"
 
 using namespace std;
 
@@ -37,6 +38,7 @@ void menu_comojogar(int &tam, int &dificuldade){ // texto de como jogar
 }
 
 int escolher_jogador(){
+    mostrar_cursor(false);
     int jogador = rand() % 2 + 1;
     int num = 1;
     system("cls");
@@ -49,6 +51,7 @@ int escolher_jogador(){
     for(int i=0; i < 100; i++){
         gotoxy(50, 50);
         if(i == 99){
+            gotoxy(50, 50);
             cout << jogador;
         } else {
             cout << num;
@@ -65,6 +68,7 @@ int escolher_jogador(){
 }
 
 string menu_nome(int jogador){
+    mostrar_cursor(true);
     string nome;
     system("cls");
     cout << "\n\n\n";
@@ -76,9 +80,11 @@ string menu_nome(int jogador){
     centralizar("", 4);
     cin >> nome;
     return nome;
+    mostrar_cursor(false);
 }
 
 void menu_tam(int &tam){
+    mostrar_cursor(true);
     system("cls");
     int opcao; // variavel local para armazenar a opção escolhida
     cout << "\n\n\n";
@@ -89,6 +95,7 @@ void menu_tam(int &tam){
     cin >> tam; // define o tamanho da matriz com base na escolha do usuário
     if(tam < 3 or tam > 10)
         menu_tam(tam);
+    mostrar_cursor(false);
 }
 
 void menu_dificuldade(int &dificuldade){
@@ -130,6 +137,7 @@ void menu_dificuldade(int &dificuldade){
 }
 
 void menu(int &tam, int &dificuldade, ranking top[10]){
+    mostrar_cursor(false);
     system("cls");
     int opcao=1, jogador, num, ordenacao[10]={0}, tecla=0, y=8, _opcao; // variavel local para armazenar a opção escolhida
     string jogador1, jogador2;
@@ -149,7 +157,6 @@ void menu(int &tam, int &dificuldade, ranking top[10]){
     while(enter==false){
         tecla=0;
         _opcao=opcao;
-        gotoxy(45, 14);
         switch((tecla = _getch())) { // C será o código da tecla pressionada
             case KEY_UP: // caso for tecla para cima (W) diminui a linha em 1
                 if(opcao > 1)

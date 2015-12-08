@@ -31,10 +31,12 @@ bool verificacao(int **matriz, int **selecao, int &tam, int &jogador, int &resul
                     break;
                 case 1:
                     auxH1++;
+                    auxH2=0;
                     geral++;
                     break;
                 case 2:
                     auxH2++;
+                    auxH1=0;
                     geral++;
                     break;
             }
@@ -46,11 +48,11 @@ bool verificacao(int **matriz, int **selecao, int &tam, int &jogador, int &resul
                     break;
                 case 1:
                     auxV1++;
-                    geral++;
+                    auxV2=0;
                     break;
                 case 2:
                     auxV2++;
-                    geral++;
+                    auxV1=0;
                     break;
             }
             // verificação diagonal principal
@@ -61,9 +63,11 @@ bool verificacao(int **matriz, int **selecao, int &tam, int &jogador, int &resul
                     break;
                 case 1:
                     auxDP1++;
+                    auxDP2=0;
                     break;
                 case 2:
                     auxDP2++;
+                    auxDP1=0;
                     break;
             }
             // verificação diagonal secundária
@@ -74,9 +78,11 @@ bool verificacao(int **matriz, int **selecao, int &tam, int &jogador, int &resul
                     break;
                 case 1:
                     auxDS1++;
+                    auxDS2=0;
                     break;
                 case 2:
                     auxDS2++;
+                    auxDS1=0;
                     break;
             }
 
@@ -88,7 +94,7 @@ bool verificacao(int **matriz, int **selecao, int &tam, int &jogador, int &resul
                     resultado=2;
                 return true;
             }
-            if(geral==tam*tam){ // verificação velha
+            if(geral >= tam*tam){ // verificação velha
                 resultado=0;
                 return true;
             }

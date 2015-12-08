@@ -75,7 +75,7 @@
 
 1448447392 c:\users\andréluiz\desktop\jogodavelha-master\criarmatriz.h
 
-1449535597 source:d:\github\jogodavelha\main.cpp
+1449536953 source:d:\github\jogodavelha\main.cpp
 	<iostream>
 	<locale.h>
 	<windows.h>
@@ -85,10 +85,10 @@
 	"menu.h"
 	"struct_ranking.h"
 
-1448894216 d:\github\jogodavelha\dimensaojanela.h
+1449536953 d:\github\jogodavelha\dimensaojanela.h
 	<windows.h>
 
-1449084088 d:\github\jogodavelha\menu.h
+1449536953 d:\github\jogodavelha\menu.h
 	"jogadorxcomputador.h"
 	"jogadorxjogador.h"
 	"centralizar.h"
@@ -103,7 +103,7 @@
 	"gotoxy.h"
 	"mostrar_cursor.h"
 
-1449532810 d:\github\jogodavelha\jogadorxcomputador.h
+1449538515 d:\github\jogodavelha\jogadorxcomputador.h
 	"struct_ranking.h"
 	"vet_guia.h"
 	"verificacao.h"
@@ -113,34 +113,33 @@
 	"inserir_ranking.h"
 	"salvar_ranking.h"
 
-1448894217 d:\github\jogodavelha\vet_guia.h
+1449536953 d:\github\jogodavelha\vet_guia.h
 
-1449534414 d:\github\jogodavelha\verificacao.h
+1449536953 d:\github\jogodavelha\verificacao.h
 	"desenhar.h"
 	"centralizar.h"
 
-1448894216 d:\github\jogodavelha\desenhar.h
+1449536953 d:\github\jogodavelha\desenhar.h
 	"gotoxy.h"
 	"cores.h"
 	"cor.h"
 	"centralizar.h"
 
-1448894216 d:\github\jogodavelha\gotoxy.h
+1449536953 d:\github\jogodavelha\gotoxy.h
 	<windows.h>
 
-1448894254 d:\github\jogodavelha\cores.h
+1449536953 d:\github\jogodavelha\cores.h
 
-1448894216 d:\github\jogodavelha\cor.h
+1449536953 d:\github\jogodavelha\cor.h
 	<windows.h>
 
-1448894254 d:\github\jogodavelha\centralizar.h
+1449536953 d:\github\jogodavelha\centralizar.h
 	<string.h>
 
-1449535808 d:\github\jogodavelha\ia.h
+1449538142 d:\github\jogodavelha\ia.h
 	"centralizar.h"
-	"verificacao.h"
 
-1448985510 d:\github\jogodavelha\entrada.h
+1449536953 d:\github\jogodavelha\entrada.h
 	<conio.h>
 	"teclas.h"
 	"centralizar.h"
@@ -148,11 +147,11 @@
 	"limparmatriz.h"
 	"mostrar_cursor.h"
 
-1448894217 d:\github\jogodavelha\teclas.h
+1449536953 d:\github\jogodavelha\teclas.h
 
-1448894216 d:\github\jogodavelha\limparmatriz.h
+1449536953 d:\github\jogodavelha\limparmatriz.h
 
-1448985699 d:\github\jogodavelha\jogadorxjogador.h
+1449538522 d:\github\jogodavelha\jogadorxjogador.h
 	"struct_ranking.h"
 	"vet_guia.h"
 	"desenhar.h"
@@ -161,9 +160,9 @@
 	"inserir_ranking.h"
 	"salvar_ranking.h"
 
-1448894216 d:\github\jogodavelha\deletarmatriz.h
+1449536953 d:\github\jogodavelha\deletarmatriz.h
 
-1448894216 d:\github\jogodavelha\criarmatriz.h
+1449536953 d:\github\jogodavelha\criarmatriz.h
 
 1448890677 source:c:\users\santosi\documents\github\jogodavelha\main.cpp
 	<iostream>
@@ -254,25 +253,25 @@
 
 1448890617 source:c:\users\santosi\documents\github\jogodavelha\resource.rc
 
-1448894217 source:d:\github\jogodavelha\resource.rc
+1449536953 source:d:\github\jogodavelha\resource.rc
 
-1448894217 d:\github\jogodavelha\struct_ranking.h
+1449536953 d:\github\jogodavelha\struct_ranking.h
 
-1448894277 d:\github\jogodavelha\mostrar_ranking.h
+1449536953 d:\github\jogodavelha\mostrar_ranking.h
 	<conio.h>
 	"struct_ranking.h"
 	"cores.h"
 	"cor.h"
 	"centralizar.h"
 
-1448894216 d:\github\jogodavelha\carregar_ranking.h
+1449536953 d:\github\jogodavelha\carregar_ranking.h
 	<fstream>
 
-1448894217 d:\github\jogodavelha\ordenar_ranking.h
+1449536953 d:\github\jogodavelha\ordenar_ranking.h
 
-1449534891 d:\github\jogodavelha\inserir_ranking.h
+1449536953 d:\github\jogodavelha\inserir_ranking.h
 
-1448894254 d:\github\jogodavelha\salvar_ranking.h
+1449536953 d:\github\jogodavelha\salvar_ranking.h
 	<fstream>
 
 1448890617 c:\users\santosi\documents\github\jogodavelha\struct_ranking.h
@@ -294,6 +293,6 @@
 
 1448890617 c:\users\santosi\documents\github\jogodavelha\ordenar_ranking.h
 
-1448937811 d:\github\jogodavelha\mostrar_cursor.h
+1449536953 d:\github\jogodavelha\mostrar_cursor.h
 	<windows.h>
 

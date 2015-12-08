@@ -22,8 +22,8 @@ void InserirRanking(string jogador, float tempo, int modo, int &num, ranking top
             top[indice].tempo=tempo;
             top[indice].modo=modo;
         }else{
-            cout << "\n\n";
             centralizar("Jogador não inserido no ranking, tempo muito grande!");
+            cout << "\n\n";
         }
     }
 }

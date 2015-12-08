@@ -58,12 +58,12 @@ bool verificacao(int **matriz, int **selecao, int &tam, int &jogador, int &resul
                 return true;
             }
             if(geral==tam*tam){ // verificação velha
-                desenhar(matriz, selecao, tam, jogador);
                 resultado=0;
                 return true;
             }
         }
     }
+    return false;
 }
 
 #endif // VERIFICACAO_H_INCLUDED

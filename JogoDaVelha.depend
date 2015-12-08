@@ -115,11 +115,11 @@
 
 1449536953 d:\github\jogodavelha\vet_guia.h
 
-1449536953 d:\github\jogodavelha\verificacao.h
+1449595094 d:\github\jogodavelha\verificacao.h
 	"desenhar.h"
 	"centralizar.h"
 
-1449542577 d:\github\jogodavelha\desenhar.h
+1449542655 d:\github\jogodavelha\desenhar.h
 	"gotoxy.h"
 	"cores.h"
 	"cor.h"
@@ -136,7 +136,7 @@
 1449536953 d:\github\jogodavelha\centralizar.h
 	<string.h>
 
-1449538619 d:\github\jogodavelha\ia.h
+1449593814 d:\github\jogodavelha\ia.h
 	"centralizar.h"
 
 1449536953 d:\github\jogodavelha\entrada.h

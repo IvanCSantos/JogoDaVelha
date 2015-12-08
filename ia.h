@@ -17,6 +17,12 @@ int ia(int **matriz, int vetL[26], int vetC[26], int &tam, int &dificuldade){
 
     if(dificuldade==2){ // dificuldade dificil
         int somaX[4]={0}, somaO[4]={0}, somaV[4]={0}, aux[4]={0}, auxO[4][3]={0}, auxX[4][3]={0}, auxV[4][3]={0};
+        int lim;
+        if(tam < 5){
+            lim = tam-1;
+        } else {
+            lim = 4;
+        }
         /*
 
         somaX --> Varíavel destinada a somar os campos preenchidas com "X", um contador para definir se o usuário está perto de fechar uma linha.
@@ -59,15 +65,15 @@ int ia(int **matriz, int vetL[26], int vetC[26], int &tam, int &dificuldade){
                 } else if(matriz[i][j]==2){
                     somaO[0]++;
                 }
-                if (somaO[0]==tam-1 and matriz[i][aux[0]]==0){
+                if (somaO[0]==lim and matriz[i][aux[0]]==0){
                     auxO[0][0]=1;
                     auxO[0][1]=i;
                     auxO[0][2]=aux[0];
-                } else if (somaX[0]==tam-1 and matriz[i][aux[0]]==0){
+                } else if (somaX[0]==lim and matriz[i][aux[0]]==0){
                     auxX[0][0]=1;
                     auxX[0][1]=i;
                     auxX[0][2]=aux[0];
-                } else if (somaV[0]==tam-1 and matriz[i][aux[0]]==0){
+                } else if ((somaV[0]==lim or (somaV[0] + somaO[0] == lim)) and matriz[i][aux[0]]==0){
                     auxV[0][0]=1;
                     auxV[0][1]=i;
                     auxV[0][2]=aux[0];
@@ -80,15 +86,15 @@ int ia(int **matriz, int vetL[26], int vetC[26], int &tam, int &dificuldade){
                 } else if(matriz[j][i]==2){
                     somaO[1]++;
                 }
-                if (somaO[1]==tam-1 and matriz[aux[1]][i]==0){
+                if (somaO[1]==lim and matriz[aux[1]][i]==0){
                     auxO[1][0]=1;
                     auxO[1][1]=aux[1];
                     auxO[1][2]=i;
-                } else if (somaX[1]==tam-1 and matriz[aux[1]][i]==0){
+                } else if (somaX[1]==lim and matriz[aux[1]][i]==0){
                     auxX[1][0]=1;
                     auxX[1][1]=aux[1];
                     auxX[1][2]=i;
-                } else if (somaV[1]==tam-1 and matriz[aux[0]][i]==0){
+                } else if ((somaV[1]==lim or (somaV[1] + somaO[1] == lim)) and matriz[aux[0]][i]==0){
                     auxV[1][0]=1;
                     auxV[1][1]=aux[1];
                     auxV[1][2]=i;
@@ -109,15 +115,15 @@ int ia(int **matriz, int vetL[26], int vetC[26], int &tam, int &dificuldade){
             } else if(matriz[ii][ii]==2){
                 somaO[2]++;
             }
-            if (somaO[2]==tam-1 and matriz[aux[2]][aux[2]]==0){
+            if (somaO[2]==lim and matriz[aux[2]][aux[2]]==0){
                 auxO[2][0]=1;
                 auxO[2][1]=aux[2];
                 auxO[2][2]=aux[2];
-            } else if (somaX[2]==tam-1 and matriz[aux[2]][aux[2]]==0){
+            } else if (somaX[2]==lim and matriz[aux[2]][aux[2]]==0){
                 auxX[2][0]=1;
                 auxX[2][1]=aux[2];
                 auxX[2][2]=aux[2];
-            } else if (somaV[2]==tam-1 and matriz[aux[2]][aux[2]]==0){
+            } else if ((somaV[2]==lim or (somaV[2] + somaO[2] == lim)) and matriz[aux[2]][aux[2]]==0){
                 auxV[2][0]=1;
                 auxV[2][1]=aux[2];
                 auxV[2][2]=aux[2];
@@ -131,15 +137,15 @@ int ia(int **matriz, int vetL[26], int vetC[26], int &tam, int &dificuldade){
             } else if(matriz[ii][tam-1-ii]==2){
                 somaO[3]++;
             }
-            if (somaO[3]==tam-1 and matriz[aux[3]][tam-1-aux[3]]==0){
+            if (somaO[3]==lim and matriz[aux[3]][tam-1-aux[3]]==0){
                 auxO[3][0]=1;
                 auxO[3][1]=aux[3];
                 auxO[3][2]=tam-1-aux[3];
-            } else if (somaX[3]==tam-1 and matriz[aux[3]][tam-1-aux[3]]==0){
+            } else if (somaX[3]==lim and matriz[aux[3]][tam-1-aux[3]]==0){
                 auxX[3][0]=1;
                 auxX[3][1]=aux[3];
                 auxX[3][2]=tam-1-aux[3];
-            } else if (somaV[3]==tam-1 and matriz[aux[3]][tam-1-aux[3]]==0){
+            } else if ((somaV[3]==lim or (somaV[3] + somaO[3] == lim)) and matriz[aux[3]][tam-1-aux[3]]==0){
                 auxV[3][0]=1;
                 auxV[3][1]=aux[3];
                 auxV[3][2]=tam-1-aux[3];

@@ -22,34 +22,65 @@ bool verificacao(int **matriz, int **selecao, int &tam, int &jogador, int &resul
         auxDS1=0;
         auxDS2=0;
         // incrementação somas
-        // verificação horizontal
         for(int j = 0; j < tam; j++){
-            if (matriz[i][j]==1){
-                auxH1++;
-                geral++;
-            } else if (matriz[i][j]==2){
-                auxH2++;
-                geral++;
+            // verificação horizontal
+            switch(matriz[i][j]){
+                case 0:
+                    auxH1=0;
+                    auxH2=0;
+                    break;
+                case 1:
+                    auxH1++;
+                    geral++;
+                    break;
+                case 2:
+                    auxH2++;
+                    geral++;
+                    break;
             }
-        // verificação vertical
-            if (matriz[j][i]==1){
-                auxV1++;
-            } else if (matriz[j][i]==2){
-                auxV2++;
+            // verificação vertical
+            switch(matriz[j][i]){
+                case 0:
+                    auxV1=0;
+                    auxV2=0;
+                    break;
+                case 1:
+                    auxV1++;
+                    geral++;
+                    break;
+                case 2:
+                    auxV2++;
+                    geral++;
+                    break;
             }
-        // verificação diagonal principal
-            if (matriz[j][j]==1){
-                auxDP1++;
-            } else if (matriz[j][j]==2){
-                auxDP2++;
+            // verificação diagonal principal
+            switch(matriz[j][j]){
+                case 0:
+                    auxDP1=0;
+                    auxDP2=0;
+                    break;
+                case 1:
+                    auxDP1++;
+                    break;
+                case 2:
+                    auxDP2++;
+                    break;
             }
-        // verificação diagonal secundária
-            if (matriz[j][(tam-1)-j]==1){
-                auxDS1++;
-            } else if (matriz[j][(tam-1)-j]==2){
-                auxDS2++;
+            // verificação diagonal secundária
+            switch(matriz[j][(tam-1)-j]){
+                case 0:
+                    auxDS1=0;
+                    auxDS2=0;
+                    break;
+                case 1:
+                    auxDS1++;
+                    break;
+                case 2:
+                    auxDS2++;
+                    break;
             }
-        // verificação final
+
+            // verificação final
             if(auxH1==lim or auxH2==lim or auxV1==lim or auxV2==lim or auxDP1==lim or auxDP2==lim or auxDS1==lim or auxDS2==lim){
                 if(jogador==1)
                     resultado=1;

@@ -6,8 +6,6 @@ using namespace std;
 
 void SalvarRanking(int &num, ranking top[10]){
     char sep=';';
-    bool primeira=true;
-    int i=0, controle=0;
     ofstream txt;
     txt.open("ranking.txt", ofstream::out | ofstream::trunc);
     txt << num << "\n";

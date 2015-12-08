@@ -103,7 +103,7 @@
 	"gotoxy.h"
 	"mostrar_cursor.h"
 
-1449538515 d:\github\jogodavelha\jogadorxcomputador.h
+1449538582 d:\github\jogodavelha\jogadorxcomputador.h
 	"struct_ranking.h"
 	"vet_guia.h"
 	"verificacao.h"
@@ -119,7 +119,7 @@
 	"desenhar.h"
 	"centralizar.h"
 
-1449536953 d:\github\jogodavelha\desenhar.h
+1449542577 d:\github\jogodavelha\desenhar.h
 	"gotoxy.h"
 	"cores.h"
 	"cor.h"
@@ -136,7 +136,7 @@
 1449536953 d:\github\jogodavelha\centralizar.h
 	<string.h>
 
-1449538142 d:\github\jogodavelha\ia.h
+1449538619 d:\github\jogodavelha\ia.h
 	"centralizar.h"
 
 1449536953 d:\github\jogodavelha\entrada.h
@@ -271,7 +271,7 @@
 
 1449536953 d:\github\jogodavelha\inserir_ranking.h
 
-1449536953 d:\github\jogodavelha\salvar_ranking.h
+1449541861 d:\github\jogodavelha\salvar_ranking.h
 	<fstream>
 
 1448890617 c:\users\santosi\documents\github\jogodavelha\struct_ranking.h

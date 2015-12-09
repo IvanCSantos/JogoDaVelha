@@ -75,7 +75,7 @@
 
 1448447392 c:\users\andréluiz\desktop\jogodavelha-master\criarmatriz.h
 
-1449536953 source:d:\github\jogodavelha\main.cpp
+1449598764 source:d:\github\jogodavelha\main.cpp
 	<iostream>
 	<locale.h>
 	<windows.h>
@@ -88,7 +88,7 @@
 1449536953 d:\github\jogodavelha\dimensaojanela.h
 	<windows.h>
 
-1449536953 d:\github\jogodavelha\menu.h
+1449600353 d:\github\jogodavelha\menu.h
 	"jogadorxcomputador.h"
 	"jogadorxjogador.h"
 	"centralizar.h"
@@ -103,7 +103,7 @@
 	"gotoxy.h"
 	"mostrar_cursor.h"
 
-1449538582 d:\github\jogodavelha\jogadorxcomputador.h
+1449604435 d:\github\jogodavelha\jogadorxcomputador.h
 	"struct_ranking.h"
 	"vet_guia.h"
 	"verificacao.h"
@@ -136,7 +136,7 @@
 1449536953 d:\github\jogodavelha\centralizar.h
 	<string.h>
 
-1449593814 d:\github\jogodavelha\ia.h
+1449604447 d:\github\jogodavelha\ia.h
 	"centralizar.h"
 
 1449536953 d:\github\jogodavelha\entrada.h
@@ -295,4 +295,117 @@
 
 1449536953 d:\github\jogodavelha\mostrar_cursor.h
 	<windows.h>
+
+1449595164 source:c:\temp\jogodavelha2\main.cpp
+	<iostream>
+	<locale.h>
+	<windows.h>
+	<stdlib.h>
+	<time.h>
+	"dimensaojanela.h"
+	"menu.h"
+	"struct_ranking.h"
+
+1449533353 c:\temp\jogodavelha2\dimensaojanela.h
+	<windows.h>
+
+1449596753 c:\temp\jogodavelha2\menu.h
+	"jogadorxcomputador.h"
+	"jogadorxjogador.h"
+	"centralizar.h"
+	"cor.h"
+	"cores.h"
+	"limparmatriz.h"
+	"deletarmatriz.h"
+	"criarmatriz.h"
+	"mostrar_ranking.h"
+	"carregar_ranking.h"
+	"ordenar_ranking.h"
+	"gotoxy.h"
+	"mostrar_cursor.h"
+
+1449610237 c:\temp\jogodavelha2\jogadorxcomputador.h
+	"struct_ranking.h"
+	"vet_guia.h"
+	"verificacao.h"
+	"desenhar.h"
+	"ia.h"
+	"entrada.h"
+	"inserir_ranking.h"
+	"salvar_ranking.h"
+
+1449533353 c:\temp\jogodavelha2\struct_ranking.h
+
+1449533353 c:\temp\jogodavelha2\vet_guia.h
+
+1449591886 c:\temp\jogodavelha2\verificacao.h
+	"desenhar.h"
+	"centralizar.h"
+
+1449539055 c:\temp\jogodavelha2\desenhar.h
+	"gotoxy.h"
+	"cores.h"
+	"cor.h"
+	"centralizar.h"
+
+1449533353 c:\temp\jogodavelha2\gotoxy.h
+	<windows.h>
+
+1449533353 c:\temp\jogodavelha2\cores.h
+
+1449533353 c:\temp\jogodavelha2\cor.h
+	<windows.h>
+
+1449533353 c:\temp\jogodavelha2\centralizar.h
+	<string.h>
+
+1449614715 c:\temp\jogodavelha2\ia.h
+	"centralizar.h"
+
+1449533353 c:\temp\jogodavelha2\entrada.h
+	<conio.h>
+	"teclas.h"
+	"centralizar.h"
+	"desenhar.h"
+	"limparmatriz.h"
+	"mostrar_cursor.h"
+
+1449533353 c:\temp\jogodavelha2\teclas.h
+
+1449533353 c:\temp\jogodavelha2\limparmatriz.h
+
+1449533353 c:\temp\jogodavelha2\mostrar_cursor.h
+	<windows.h>
+
+1449533353 c:\temp\jogodavelha2\inserir_ranking.h
+
+1449538261 c:\temp\jogodavelha2\salvar_ranking.h
+	<fstream>
+
+1449534922 c:\temp\jogodavelha2\jogadorxjogador.h
+	"struct_ranking.h"
+	"vet_guia.h"
+	"desenhar.h"
+	"entrada.h"
+	"verificacao.h"
+	"inserir_ranking.h"
+	"salvar_ranking.h"
+
+1449533353 c:\temp\jogodavelha2\deletarmatriz.h
+
+1449533353 c:\temp\jogodavelha2\criarmatriz.h
+
+1449533353 c:\temp\jogodavelha2\mostrar_ranking.h
+	<conio.h>
+	"struct_ranking.h"
+	"cores.h"
+	"cor.h"
+	"centralizar.h"
+
+1449533353 c:\temp\jogodavelha2\carregar_ranking.h
+	<fstream>
+
+1449533353 c:\temp\jogodavelha2\ordenar_ranking.h
+
+1449533353 source:c:\temp\jogodavelha2\resource.rc
 

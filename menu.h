@@ -149,12 +149,12 @@ void menu_dificuldade(int &dificuldade){
 }
 
 void menu(int &tam, int &dificuldade, ranking top[10]){
-	mostrar_cursor(false);
     system("cls");
     int opcao=1, jogador, num, ordenacao[10]={0}, tecla=0, y=8, _opcao; // variavel local para armazenar a opção escolhida
     string jogador1, jogador2;
     bool saiu=false, enter=false;
     cout << "\n\n\n";
+    mostrar_cursor(false);
     cor(VERDE_ESCURO);
     centralizar("BEM-VINDO AO JOGO DA VELHA!"); cout << "\n\n";
     cor(PRETO);

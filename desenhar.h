@@ -53,32 +53,12 @@ void desenhar(int **matriz, int **selecao, int &tam, int &jogador){
         }
         if(i < tam-1){
             cout << "\n";
-            switch(tam){
-                case 3:
-                    centralizar("-----------"); // separação de linha da velha
-                    break;
-                case 4:
-                    centralizar("---------------"); // separação de linha da velha
-                    break;
-                case 5:
-                    centralizar("-------------------"); // separação de linha da velha
-                    break;
-                case 6:
-                    centralizar("-----------------------"); // separação de linha da velha
-                    break;
-                case 7:
-                    centralizar("---------------------------"); // separação de linha da velha
-                    break;
-                case 8:
-                    centralizar("-------------------------------"); // separação de linha da velha
-                    break;
-                case 9:
-                    centralizar("-----------------------------------"); // separação de linha da velha
-                    break;
-                case 10:
-                    centralizar("---------------------------------------"); // separação de linha da velha
-                    break;
+            string temp="-----------";
+            for(int i=4; i <= tam; i++){
+                temp = temp + "----";
             }
+            const char *sep = temp.c_str();
+            centralizar(sep);
         }
     }
     cout << "\n\n";

@@ -56,6 +56,7 @@
 		<Unit filename="limparmatriz.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="menu.h" />
+		<Unit filename="mostrar_cursor.h" />
 		<Unit filename="mostrar_ranking.h" />
 		<Unit filename="ordenar_ranking.h" />
 		<Unit filename="ranking.txt" />

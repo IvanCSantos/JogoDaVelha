@@ -40,7 +40,7 @@ void jogadorxjogador(int **matriz, int **selecao, int &tam, int &jogador, int &n
     if(resultado == 0){
         centralizar("Deu velha!");
     }
-    cout << "\n\n"; centralizar("          "); cout << "\n";
+    cout << "                       \n\n"; centralizar("          "); cout << "\n";
     centralizar("Tempo de jogo: ", 8);
     cout << tempo << " segundos\n\n\n\n\n\n\n";
     centralizar("Pressione qualquer tecla para voltar");

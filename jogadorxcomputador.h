@@ -13,10 +13,12 @@
 using namespace std;
 
 void jogadorxcomputador(int **matriz, int **selecao, int &tam, int &dificuldade, int &jogador, int &num, string &jogador1, ranking top[10]){ // função que controla o jogador x computador
-    bool vencer = false, computador = true;
+    bool vencer = false, computador = true, primeira = true;
     int vetL[101], vetC[101], resultado=0;
     vet_guia(vetL, vetC, tam, matriz); // chama a função para criar o vetor guia que ajuda a manipular a matriz
     float tempo1 = GetTickCount();
+    system("cls");
+    desenhar(matriz, selecao, tam, jogador);
     while(vencer == false){ // enquanto ninguém vencer executa o loop de procedimentos
         if(jogador == 1){
             desenhar(matriz, selecao, tam, jogador);
@@ -27,7 +29,7 @@ void jogadorxcomputador(int **matriz, int **selecao, int &tam, int &dificuldade,
                 ((jogador == 1)? jogador = 2 : jogador = 1);
         }
         if(jogador == 2){
-            ia(matriz, vetL, vetC, tam, dificuldade); // função que faz a jogada do computador
+            ia(matriz, vetL, vetC, tam, dificuldade, primeira); // função que faz a jogada do computador
             Sleep(1000);
             vencer = verificacao(matriz, selecao, tam, jogador, resultado, computador); // faz a verificação e retorna true ou false para a variável vencer
             if (vencer == false) // se ninguém venceu ainda, troca de jogador
@@ -53,7 +55,7 @@ void jogadorxcomputador(int **matriz, int **selecao, int &tam, int &dificuldade,
     if(resultado == 0){
         centralizar("Deu velha!");
     }
-    cout << "\n\n"; centralizar("                   "); cout << "\n";
+    cout << "                       \n\n"; centralizar("                   "); cout << "\n";
     centralizar("Tempo de jogo: ", 8);
     cout << tempo << " segundos\n\n\n\n\n";
     centralizar("Pressione qualquer tecla para voltar");

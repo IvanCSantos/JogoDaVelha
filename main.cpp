@@ -24,7 +24,7 @@ using namespace std;
 
 int main(){
     system("color f0"); // cor do console
-    DimensaoJanela(90, 30); // altera a dimensão da janela do console
+    DimensaoJanela(90, 40); // altera a dimensão da janela do console
     setlocale(LC_ALL, "Portuguese_Brazil"); // para a acentuação funcionar
     setlocale(LC_NUMERIC, "English");
     srand(time(NULL)); // para usar random
